@@ -44,8 +44,7 @@ class HomeItemWidget extends StatelessWidget {
                         right: 10,
                       ),
                       child: Obx(
-                        () => Text(
-                          homeItemModelObj.priceOneTxt.value,
+                        () => Text( "₹ "+homeItemModelObj.priceOneTxt.value,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: AppStyle.txtMulishRomanBold16.copyWith(

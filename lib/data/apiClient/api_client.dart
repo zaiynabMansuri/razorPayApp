@@ -10,8 +10,7 @@ class ApiClient extends GetConnect {
     httpClient.timeout = Duration(seconds: 60);
     httpClient.addRequestModifier<dynamic>((request) {
       Map<String, String> headers = {
-        "X-Razorpay-Account": "{acc_id}",
-        "Authorization": "{{apiPrivateAuth}}",
+        "Authorization": "Basic cnpwX3Rlc3RfUjhVVEZTMXFuRXZhVFE6dDZkalNkOVhpSFg5RFpPeU5rbU4xM05L",
         "X-Dashboard-User-Id": "20000000000000",
         "X-Dashboard-User-Role": "owner",
         "Content-Type": "application/json"

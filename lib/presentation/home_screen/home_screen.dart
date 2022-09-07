@@ -245,8 +245,11 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                               .homeItemList[index];
                                                                       return HomeItemWidget(
                                                                           model,
-                                                                          onTapRowprice:
-                                                                              onTapRowprice);
+                                                                          onTapRowprice: (){
+                                                                            Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
+                                                                              NavigationArgs.transectionid: controller.getPaymentsResp.items![index].id!
+                                                                            });
+                                                                          });
                                                                     })))),
                                                     Container(
                                                         height: getVerticalSize(
@@ -317,56 +320,43 @@ class HomeScreen extends GetWidget<HomeController> {
                                               .txtMulishRomanSemiBold14
                                               .copyWith()))
                                 ])),
-                            GestureDetector(
-                                onTap: () {
-                                  onTapColumnfolder();
-                                },
-                                child: Container(
-                                    margin: getMargin(top: 12, bottom: 1),
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                              padding: getPadding(
-                                                  left: 29, right: 29),
-                                              child: CommonImageView(
-                                                  svgPath:
-                                                      ImageConstant.imgFolder,
-                                                  height: getSize(26.00),
-                                                  width: getSize(26.00))),
-                                          Align(
-                                              alignment: Alignment.centerLeft,
-                                              child: Padding(
-                                                  padding: getPadding(top: 8),
-                                                  child: Text(
-                                                      "lbl_transactions".tr,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      textAlign: TextAlign.left,
-                                                      style: AppStyle
-                                                          .txtMulishRomanSemiBold14Bluegray500
-                                                          .copyWith())))
-                                        ])))
+                            Container(
+                                margin: getMargin(top: 12, bottom: 1),
+                                child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(
+                                              left: 29, right: 29),
+                                          child: CommonImageView(
+                                              svgPath:
+                                                  ImageConstant.imgFolder,
+                                              height: getSize(26.00),
+                                              width: getSize(26.00))),
+                                      Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Padding(
+                                              padding: getPadding(top: 8),
+                                              child: Text(
+                                                  "lbl_transactions".tr,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.left,
+                                                  style: AppStyle
+                                                      .txtMulishRomanSemiBold14Bluegray500
+                                                      .copyWith())))
+                                    ]))
                           ])))
             ])));
   }
 
-  onTapRowprice() {
-    Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
-      NavigationArgs.transectionid: controller.getPaymentsResp.items!.id!
-    });
-  }
 
   onTapBtntf() {
 // TODO: implement Actions
   }
-  onTapColumnfolder() {
-    Get.toNamed(AppRoutes.transectionListScreen, arguments: {
-      NavigationArgs.transectioid: controller.getPaymentsResp.items!.id!
-    });
-  }
+
 }
