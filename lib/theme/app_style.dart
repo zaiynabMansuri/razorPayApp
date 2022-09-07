@@ -12,21 +12,12 @@ class AppStyle {
   );
 
   static TextStyle txtMulishRomanSemiBold14 = TextStyle(
-    color: ColorConstant.blue700,
+    color: ColorConstant.bluegray500,
     fontSize: getFontSize(
       14,
     ),
     fontFamily: 'Mulish',
     fontWeight: FontWeight.w600,
-  );
-
-  static TextStyle txtMulishRomanBold16Bluegray901 = TextStyle(
-    color: ColorConstant.bluegray901,
-    fontSize: getFontSize(
-      16,
-    ),
-    fontFamily: 'Mulish',
-    fontWeight: FontWeight.w700,
   );
 
   static TextStyle txtMulishRomanBold18Blue700 = TextStyle(
@@ -48,7 +39,7 @@ class AppStyle {
   );
 
   static TextStyle txtMulishRomanSemiBold12 = TextStyle(
-    color: ColorConstant.green600,
+    color: ColorConstant.blue700,
     fontSize: getFontSize(
       12,
     ),
@@ -66,7 +57,7 @@ class AppStyle {
   );
 
   static TextStyle txtMulishRomanMedium16 = TextStyle(
-    color: ColorConstant.indigo900,
+    color: ColorConstant.bluegray500,
     fontSize: getFontSize(
       16,
     ),
@@ -101,7 +92,7 @@ class AppStyle {
   );
 
   static TextStyle txtMulishRomanBold16 = TextStyle(
-    color: ColorConstant.bluegray900,
+    color: ColorConstant.bluegray901,
     fontSize: getFontSize(
       16,
     ),
@@ -116,6 +107,15 @@ class AppStyle {
     ),
     fontFamily: 'Mulish',
     fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle txtMulishRomanMedium16Indigo900 = TextStyle(
+    color: ColorConstant.indigo900,
+    fontSize: getFontSize(
+      16,
+    ),
+    fontFamily: 'Mulish',
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtMulishRomanBold24Bluegray500 = TextStyle(
@@ -133,15 +133,6 @@ class AppStyle {
       20,
     ),
     fontWeight: FontWeight.w400,
-  );
-
-  static TextStyle txtMulishRomanSemiBold14Bluegray500 = TextStyle(
-    color: ColorConstant.bluegray500,
-    fontSize: getFontSize(
-      14,
-    ),
-    fontFamily: 'Mulish',
-    fontWeight: FontWeight.w600,
   );
 
   static TextStyle txtRobotoRegular20Black90012 = TextStyle(
@@ -214,15 +205,6 @@ class AppStyle {
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle txtMulishRomanMedium16Blue700 = TextStyle(
-    color: ColorConstant.blue700,
-    fontSize: getFontSize(
-      16,
-    ),
-    fontFamily: 'Mulish',
-    fontWeight: FontWeight.w500,
-  );
-
   static TextStyle txtMulishRomanSemiBold18WhiteA700 = TextStyle(
     color: ColorConstant.whiteA700,
     fontSize: getFontSize(
@@ -232,6 +214,15 @@ class AppStyle {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle txtMulishRomanMedium16Blue700 = TextStyle(
+    color: ColorConstant.blue700,
+    fontSize: getFontSize(
+      16,
+    ),
+    fontFamily: 'Mulish',
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle txtMulishRomanMedium16Black900 = TextStyle(
     color: ColorConstant.black900,
     fontSize: getFontSize(
@@ -239,6 +230,15 @@ class AppStyle {
     ),
     fontFamily: 'Mulish',
     fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtMulishRomanSemiBold12Green600 = TextStyle(
+    color: ColorConstant.green600,
+    fontSize: getFontSize(
+      12,
+    ),
+    fontFamily: 'Mulish',
+    fontWeight: FontWeight.w600,
   );
 
   static TextStyle txtMulishRomanBold16Blue700 = TextStyle(
@@ -268,6 +268,15 @@ class AppStyle {
     fontWeight: FontWeight.w700,
   );
 
+  static TextStyle txtMulishRomanBold16Bluegray900 = TextStyle(
+    color: ColorConstant.bluegray900,
+    fontSize: getFontSize(
+      16,
+    ),
+    fontFamily: 'Mulish',
+    fontWeight: FontWeight.w700,
+  );
+
   static TextStyle txtMulishRomanMedium16Bluegray300 = TextStyle(
     color: ColorConstant.bluegray300,
     fontSize: getFontSize(
@@ -277,21 +286,12 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle txtMulishRomanSemiBold12Blue700 = TextStyle(
+  static TextStyle txtMulishRomanSemiBold14Blue700 = TextStyle(
     color: ColorConstant.blue700,
     fontSize: getFontSize(
-      12,
+      14,
     ),
     fontFamily: 'Mulish',
     fontWeight: FontWeight.w600,
-  );
-
-  static TextStyle txtMulishRomanMedium16Bluegray500 = TextStyle(
-    color: ColorConstant.bluegray500,
-    fontSize: getFontSize(
-      16,
-    ),
-    fontFamily: 'Mulish',
-    fontWeight: FontWeight.w500,
   );
 }

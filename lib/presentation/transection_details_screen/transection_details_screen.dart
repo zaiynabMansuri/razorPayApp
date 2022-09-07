@@ -116,7 +116,7 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
                                                       style: AppStyle
-                                                          .txtMulishRomanSemiBold12Blue700
+                                                          .txtMulishRomanSemiBold12
                                                           .copyWith(
                                                               height: 1.00))))
                                             ]))),

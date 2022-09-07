@@ -26,11 +26,11 @@ flutter:
   fonts: 
     - family: Mulish
       fonts: 
-        - asset: assets/fonts/MulishRomanBold.ttf
-          weight: 700
-        - asset: assets/fonts/MulishRomanSemiBold.ttf
-          weight: 600
         - asset: assets/fonts/MulishRomanMedium.ttf
           weight: 500
         - asset: assets/fonts/MulishRomanRegular.ttf
           weight: 400
+        - asset: assets/fonts/MulishRomanSemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/MulishRomanBold.ttf
+          weight: 700

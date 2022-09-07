@@ -7,9 +7,9 @@ import 'package:razorpay_x_dhiwise/data/apiClient/api_client.dart';
 class StandardPaymentLinkController extends GetxController {
   TextEditingController inputFieldController = TextEditingController();
 
-  TextEditingController emailController = TextEditingController();
+  TextEditingController emailController1 = TextEditingController();
 
-  TextEditingController mobileNoController = TextEditingController();
+  TextEditingController mobileNoController1 = TextEditingController();
 
   TextEditingController inputFieldOneController = TextEditingController();
 
@@ -35,8 +35,8 @@ class StandardPaymentLinkController extends GetxController {
   void onClose() {
     super.onClose();
     inputFieldController.dispose();
-    emailController.dispose();
-    mobileNoController.dispose();
+    emailController1.dispose();
+    mobileNoController1.dispose();
     inputFieldOneController.dispose();
   }
 

@@ -86,7 +86,7 @@ class SubscriptionsPlanDetailsScreen
                                                         TextOverflow.ellipsis,
                                                     textAlign: TextAlign.left,
                                                     style: AppStyle
-                                                        .txtMulishRomanMedium16Bluegray500
+                                                        .txtMulishRomanMedium16
                                                         .copyWith(
                                                             height: 1.00)))),
                                         Align(
@@ -319,7 +319,7 @@ class SubscriptionsPlanDetailsScreen
                                                                                 13),
                                                                         decoration: AppDecoration.txtOutlineGray300.copyWith(
                                                                             borderRadius: BorderRadiusStyle
-                                                                                .txtRoundedBorder4),
+                                                                                .txtRoundedBorder3),
                                                                         child: Text(
                                                                             "lbl_1"
                                                                                 .tr,
@@ -357,7 +357,7 @@ class SubscriptionsPlanDetailsScreen
                                                                   TextAlign
                                                                       .left,
                                                               style: AppStyle
-                                                                  .txtMulishRomanSemiBold14Bluegray500
+                                                                  .txtMulishRomanSemiBold14
                                                                   .copyWith(
                                                                       height:
                                                                           1.00)))
@@ -439,14 +439,6 @@ class SubscriptionsPlanDetailsScreen
                                                                     margin: getMargin(
                                                                         bottom:
                                                                             22),
-                                                                    variant:
-                                                                        IconButtonVariant
-                                                                            .FillBlue700,
-                                                                    shape: IconButtonShape
-                                                                        .RoundedBorder2,
-                                                                    padding:
-                                                                        IconButtonPadding
-                                                                            .PaddingAll4,
                                                                     child: CommonImageView(
                                                                         svgPath:
                                                                             ImageConstant.imgGroup44)),
@@ -481,7 +473,7 @@ class SubscriptionsPlanDetailsScreen
                                                                   .copyWith(
                                                                       borderRadius:
                                                                           BorderRadiusStyle
-                                                                              .roundedBorder8),
+                                                                              .roundedBorder6),
                                                               child: Row(
                                                                   mainAxisAlignment:
                                                                       MainAxisAlignment
@@ -538,7 +530,7 @@ class SubscriptionsPlanDetailsScreen
                                                                   TextAlign
                                                                       .left,
                                                               style: AppStyle
-                                                                  .txtMulishRomanSemiBold14Bluegray500
+                                                                  .txtMulishRomanSemiBold14
                                                                   .copyWith(
                                                                       height:
                                                                           1.00)))
@@ -615,7 +607,7 @@ class SubscriptionsPlanDetailsScreen
                                                                   .copyWith(
                                                                       borderRadius:
                                                                           BorderRadiusStyle
-                                                                              .txtRoundedBorder4),
+                                                                              .txtRoundedBorder3),
                                                               child: Text(
                                                                   "lbl_1".tr,
                                                                   overflow:
@@ -645,7 +637,7 @@ class SubscriptionsPlanDetailsScreen
                                                                   TextAlign
                                                                       .left,
                                                               style: AppStyle
-                                                                  .txtMulishRomanSemiBold14Bluegray500
+                                                                  .txtMulishRomanSemiBold14
                                                                   .copyWith(
                                                                       height:
                                                                           1.00)))

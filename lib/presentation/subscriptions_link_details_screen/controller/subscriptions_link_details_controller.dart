@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class SubscriptionsLinkDetailsController extends GetxController {
-  TextEditingController emailController1 = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
-  TextEditingController mobileNoController1 = TextEditingController();
+  TextEditingController mobileNoController = TextEditingController();
 
   TextEditingController timeController1 = TextEditingController();
 
@@ -35,8 +35,8 @@ class SubscriptionsLinkDetailsController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    emailController1.dispose();
-    mobileNoController1.dispose();
+    emailController.dispose();
+    mobileNoController.dispose();
     timeController1.dispose();
   }
 }

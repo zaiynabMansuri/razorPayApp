@@ -145,7 +145,7 @@ class StandardPaymentLinkScreen
                                                                     .copyWith(
                                                                         borderRadius:
                                                                             BorderRadiusStyle
-                                                                                .roundedBorder8),
+                                                                                .roundedBorder6),
                                                                 child: Row(
                                                                     mainAxisAlignment:
                                                                         MainAxisAlignment
@@ -198,7 +198,7 @@ class StandardPaymentLinkScreen
                                                                                   10),
                                                                           decoration: AppDecoration.txtFillBluegray50.copyWith(
                                                                               borderRadius: BorderRadiusStyle
-                                                                                  .txtRoundedBorder4),
+                                                                                  .txtRoundedBorder3),
                                                                           child: Text(
                                                                               "lbl_0_00".tr,
                                                                               overflow: TextOverflow.ellipsis,
@@ -298,7 +298,7 @@ class StandardPaymentLinkScreen
                                                       width: 396,
                                                       focusNode: FocusNode(),
                                                       controller: controller
-                                                          .emailController,
+                                                          .emailController1,
                                                       hintText:
                                                           "msg_john_example_co"
                                                               .tr,
@@ -354,7 +354,7 @@ class StandardPaymentLinkScreen
                                                       width: 396,
                                                       focusNode: FocusNode(),
                                                       controller: controller
-                                                          .mobileNoController,
+                                                          .mobileNoController1,
                                                       hintText:
                                                           "lbl_91_1234567890"
                                                               .tr,
@@ -367,9 +367,6 @@ class StandardPaymentLinkScreen
                                                               .OutlineBluegray101,
                                                       shape: TextFormFieldShape
                                                           .RoundedBorder6,
-                                                      fontStyle:
-                                                          TextFormFieldFontStyle
-                                                              .MulishRomanMedium16Bluegray901,
                                                       alignment:
                                                           Alignment.center),
                                                   Obx(() => CustomCheckbox(
@@ -475,7 +472,7 @@ class StandardPaymentLinkScreen
                                                               .copyWith(
                                                                   borderRadius:
                                                                       BorderRadiusStyle
-                                                                          .roundedBorder8),
+                                                                          .roundedBorder6),
                                                           child: Row(
                                                               mainAxisAlignment:
                                                                   MainAxisAlignment
@@ -734,8 +731,8 @@ class StandardPaymentLinkScreen
   void onTapBtnCreatelink() {
     PostPaymentLinksReq postPaymentLinksReq = PostPaymentLinksReq(
       customer: Customer(
-        email: controller.emailController.text,
-        contact: controller.mobileNoController.text,
+        email: controller.emailController1.text,
+        contact: controller.mobileNoController1.text,
       ),
       description: controller.inputFieldController.text,
       referenceId: controller.inputFieldOneController.text,

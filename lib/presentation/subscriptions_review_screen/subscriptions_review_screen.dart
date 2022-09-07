@@ -70,8 +70,7 @@ class SubscriptionsReviewScreen
                               child: Text("msg_provide_details".tr,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
-                                  style: AppStyle
-                                      .txtMulishRomanMedium16Bluegray500
+                                  style: AppStyle.txtMulishRomanMedium16
                                       .copyWith(height: 1.00)))),
                       Padding(
                           padding: getPadding(left: 16, top: 28, right: 16),

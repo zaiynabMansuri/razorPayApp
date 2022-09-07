@@ -59,9 +59,6 @@ class AppDecoration {
           ),
         ],
       );
-  static BoxDecoration get txtFillIndigo900 => BoxDecoration(
-        color: ColorConstant.indigo900,
-      );
   static BoxDecoration get txtOutlineBlue700 => BoxDecoration(
         color: ColorConstant.gray101,
         border: Border.all(
@@ -70,6 +67,9 @@ class AppDecoration {
             1.00,
           ),
         ),
+      );
+  static BoxDecoration get txtFillIndigo900 => BoxDecoration(
+        color: ColorConstant.indigo900,
       );
   static BoxDecoration get fillWhiteA700 => BoxDecoration(
         color: ColorConstant.whiteA700,
@@ -86,15 +86,15 @@ class AppDecoration {
 }
 
 class BorderRadiusStyle {
-  static BorderRadius roundedBorder8 = BorderRadius.circular(
-    getHorizontalSize(
-      8.00,
-    ),
-  );
-
   static BorderRadius txtCircleBorder28 = BorderRadius.circular(
     getHorizontalSize(
       28.00,
+    ),
+  );
+
+  static BorderRadius roundedBorder6 = BorderRadius.circular(
+    getHorizontalSize(
+      6.00,
     ),
   );
 
@@ -110,9 +110,9 @@ class BorderRadiusStyle {
     ),
   );
 
-  static BorderRadius txtRoundedBorder4 = BorderRadius.circular(
+  static BorderRadius txtRoundedBorder3 = BorderRadius.circular(
     getHorizontalSize(
-      4.00,
+      3.00,
     ),
   );
 }

@@ -80,7 +80,7 @@ class SubscriptionsLinkDetailsScreen
                                                         TextOverflow.ellipsis,
                                                     textAlign: TextAlign.left,
                                                     style: AppStyle
-                                                        .txtMulishRomanMedium16Bluegray500
+                                                        .txtMulishRomanMedium16
                                                         .copyWith(
                                                             height: 1.00)))),
                                         Align(
@@ -258,7 +258,7 @@ class SubscriptionsLinkDetailsScreen
                                                           focusNode:
                                                               FocusNode(),
                                                           controller: controller
-                                                              .emailController1,
+                                                              .emailController,
                                                           hintText:
                                                               "msg_john_example_co"
                                                                   .tr,
@@ -302,7 +302,7 @@ class SubscriptionsLinkDetailsScreen
                                                           focusNode:
                                                               FocusNode(),
                                                           controller: controller
-                                                              .mobileNoController1,
+                                                              .mobileNoController,
                                                           hintText:
                                                               "lbl_91_1234567890"
                                                                   .tr,
@@ -316,9 +316,6 @@ class SubscriptionsLinkDetailsScreen
                                                           shape:
                                                               TextFormFieldShape
                                                                   .RoundedBorder6,
-                                                          fontStyle:
-                                                              TextFormFieldFontStyle
-                                                                  .MulishRomanMedium16Bluegray901,
                                                           alignment:
                                                               Alignment.center),
                                                       Obx(() => CustomCheckbox(

@@ -48,7 +48,8 @@ class HomeItemWidget extends StatelessWidget {
                           homeItemModelObj.priceOneTxt.value,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
-                          style: AppStyle.txtMulishRomanBold16.copyWith(
+                          style:
+                              AppStyle.txtMulishRomanBold16Bluegray900.copyWith(
                             height: 1.00,
                           ),
                         ),
@@ -130,7 +131,7 @@ class HomeItemWidget extends StatelessWidget {
                     homeItemModelObj.capturedTxt.value,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
-                    style: AppStyle.txtMulishRomanSemiBold12.copyWith(
+                    style: AppStyle.txtMulishRomanSemiBold12Green600.copyWith(
                       height: 1.00,
                     ),
                   ),

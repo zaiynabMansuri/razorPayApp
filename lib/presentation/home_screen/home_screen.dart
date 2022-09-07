@@ -154,6 +154,11 @@ class HomeScreen extends GetWidget<HomeController> {
                                           width: 64,
                                           margin: getMargin(
                                               left: 53, top: 26, right: 53),
+                                          variant:
+                                              IconButtonVariant.FillIndigo50,
+                                          shape: IconButtonShape.CircleBorder32,
+                                          padding:
+                                              IconButtonPadding.PaddingAll18,
                                           alignment: Alignment.centerLeft,
                                           onTap: () {
                                             onTapBtntf();
@@ -171,7 +176,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
                                                   style: AppStyle
-                                                      .txtMulishRomanMedium16
+                                                      .txtMulishRomanMedium16Indigo900
                                                       .copyWith()))),
                                       Align(
                                           alignment: Alignment.centerLeft,
@@ -314,7 +319,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: AppStyle
-                                              .txtMulishRomanSemiBold14
+                                              .txtMulishRomanSemiBold14Blue700
                                               .copyWith()))
                                 ])),
                             GestureDetector(
@@ -348,7 +353,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
                                                       style: AppStyle
-                                                          .txtMulishRomanSemiBold14Bluegray500
+                                                          .txtMulishRomanSemiBold14
                                                           .copyWith())))
                                         ])))
                           ])))

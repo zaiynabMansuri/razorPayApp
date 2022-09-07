@@ -173,7 +173,7 @@ class PaymentLinksDetailsScreen
                                                                             overflow:
                                                                                 TextOverflow.ellipsis,
                                                                             textAlign: TextAlign.left,
-                                                                            style: AppStyle.txtMulishRomanSemiBold12Blue700.copyWith(height: 1.00))))
+                                                                            style: AppStyle.txtMulishRomanSemiBold12.copyWith(height: 1.00))))
                                                                   ]))),
                                                       Container(
                                                           height:

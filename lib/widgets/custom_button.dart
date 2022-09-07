@@ -81,16 +81,16 @@ class CustomButton extends StatelessWidget {
 
   _setColor() {
     switch (variant) {
+      case ButtonVariant.OutlineGray300:
+        return ColorConstant.whiteA700;
+      case ButtonVariant.FillBlue700:
+        return ColorConstant.blue700;
       case ButtonVariant.OutlineAmber500:
         return ColorConstant.gray50;
       case ButtonVariant.OutlineBlue7001_2:
         return ColorConstant.gray102;
       case ButtonVariant.OutlineRed700:
         return ColorConstant.gray103;
-      case ButtonVariant.OutlineGray300:
-        return ColorConstant.whiteA700;
-      case ButtonVariant.FillBlue700:
-        return ColorConstant.blue700;
       default:
         return ColorConstant.gray101;
     }
@@ -98,6 +98,13 @@ class CustomButton extends StatelessWidget {
 
   _setBorder() {
     switch (variant) {
+      case ButtonVariant.OutlineGray300:
+        return Border.all(
+          color: ColorConstant.gray300,
+          width: getHorizontalSize(
+            1.00,
+          ),
+        );
       case ButtonVariant.OutlineAmber500:
         return Border.all(
           color: ColorConstant.amber500,
@@ -115,13 +122,6 @@ class CustomButton extends StatelessWidget {
       case ButtonVariant.OutlineRed700:
         return Border.all(
           color: ColorConstant.red700,
-          width: getHorizontalSize(
-            1.00,
-          ),
-        );
-      case ButtonVariant.OutlineGray300:
-        return Border.all(
-          color: ColorConstant.gray300,
           width: getHorizontalSize(
             1.00,
           ),
@@ -153,24 +153,6 @@ class CustomButton extends StatelessWidget {
 
   _setFontStyle() {
     switch (fontStyle) {
-      case ButtonFontStyle.MulishRomanSemiBold12Amber500:
-        return TextStyle(
-          color: ColorConstant.amber500,
-          fontSize: getFontSize(
-            12,
-          ),
-          fontFamily: 'Mulish',
-          fontWeight: FontWeight.w600,
-        );
-      case ButtonFontStyle.MulishRomanSemiBold12Red700:
-        return TextStyle(
-          color: ColorConstant.red700,
-          fontSize: getFontSize(
-            12,
-          ),
-          fontFamily: 'Mulish',
-          fontWeight: FontWeight.w600,
-        );
       case ButtonFontStyle.GilroyMedium16:
         return TextStyle(
           color: ColorConstant.bluegray500,
@@ -188,6 +170,24 @@ class CustomButton extends StatelessWidget {
           ),
           fontFamily: 'Mulish',
           fontWeight: FontWeight.w500,
+        );
+      case ButtonFontStyle.MulishRomanSemiBold12Amber500:
+        return TextStyle(
+          color: ColorConstant.amber500,
+          fontSize: getFontSize(
+            12,
+          ),
+          fontFamily: 'Mulish',
+          fontWeight: FontWeight.w600,
+        );
+      case ButtonFontStyle.MulishRomanSemiBold12Red700:
+        return TextStyle(
+          color: ColorConstant.red700,
+          fontSize: getFontSize(
+            12,
+          ),
+          fontFamily: 'Mulish',
+          fontWeight: FontWeight.w600,
         );
       default:
         return TextStyle(
@@ -214,17 +214,17 @@ enum ButtonPadding {
 
 enum ButtonVariant {
   OutlineBlue700,
+  OutlineGray300,
+  FillBlue700,
   OutlineAmber500,
   OutlineBlue7001_2,
   OutlineRed700,
-  OutlineGray300,
-  FillBlue700,
 }
 
 enum ButtonFontStyle {
   MulishRomanSemiBold12,
-  MulishRomanSemiBold12Amber500,
-  MulishRomanSemiBold12Red700,
   GilroyMedium16,
   MulishRomanMedium18,
+  MulishRomanSemiBold12Amber500,
+  MulishRomanSemiBold12Red700,
 }

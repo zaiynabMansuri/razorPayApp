@@ -40,7 +40,7 @@ class ListpriceItemWidget extends StatelessWidget {
                       listpriceItemModelObj.priceTxt.value,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
-                      style: AppStyle.txtMulishRomanBold16Bluegray901.copyWith(
+                      style: AppStyle.txtMulishRomanBold16.copyWith(
                         height: 1.00,
                       ),
                     ),
@@ -123,7 +123,7 @@ class ListpriceItemWidget extends StatelessWidget {
               "lbl_issued".tr,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
-              style: AppStyle.txtMulishRomanSemiBold12Blue700.copyWith(
+              style: AppStyle.txtMulishRomanSemiBold12.copyWith(
                 height: 1.00,
               ),
             ),

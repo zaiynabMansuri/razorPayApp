@@ -111,18 +111,9 @@ class CustomTextFormField extends StatelessWidget {
           fontFamily: 'Mulish',
           fontWeight: FontWeight.w600,
         );
-      case TextFormFieldFontStyle.MulishRomanMedium16Bluegray901:
-        return TextStyle(
-          color: ColorConstant.bluegray901,
-          fontSize: getFontSize(
-            16,
-          ),
-          fontFamily: 'Mulish',
-          fontWeight: FontWeight.w500,
-        );
       default:
         return TextStyle(
-          color: ColorConstant.bluegray300,
+          color: ColorConstant.bluegray901,
           fontSize: getFontSize(
             16,
           ),
@@ -204,10 +195,10 @@ class CustomTextFormField extends StatelessWidget {
         );
       default:
         return getPadding(
-          left: 13,
-          top: 14,
-          right: 13,
-          bottom: 13,
+          left: 11,
+          top: 16,
+          right: 11,
+          bottom: 11,
         );
     }
   }
@@ -219,7 +210,7 @@ enum TextFormFieldShape {
 }
 
 enum TextFormFieldPadding {
-  PaddingT14,
+  PaddingT16,
   PaddingB8,
 }
 
@@ -232,5 +223,4 @@ enum TextFormFieldVariant {
 enum TextFormFieldFontStyle {
   MulishRomanMedium16,
   MulishRomanSemiBold18,
-  MulishRomanMedium16Bluegray901,
 }
