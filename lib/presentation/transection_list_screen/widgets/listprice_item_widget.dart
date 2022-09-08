@@ -120,7 +120,7 @@ class ListpriceItemWidget extends StatelessWidget {
               borderRadius: BorderRadiusStyle.txtCircleBorder13,
             ),
             child: Text(
-              "lbl_issued".tr,
+              listpriceItemModelObj.statusTxt.value,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtMulishRomanSemiBold12.copyWith(

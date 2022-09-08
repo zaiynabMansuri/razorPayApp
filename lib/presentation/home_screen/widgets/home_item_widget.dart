@@ -41,11 +41,10 @@ class HomeItemWidget extends StatelessWidget {
                   children: [
                     Padding(
                       padding: getPadding(
-                        right: 10,
+                        right: 15,
                       ),
                       child: Obx(
-                        () => Text(
-                          homeItemModelObj.priceOneTxt.value,
+                        () => Text( "₹ " + homeItemModelObj.priceOneTxt.value,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style:
@@ -57,33 +56,36 @@ class HomeItemWidget extends StatelessWidget {
                     ),
                     Container(
                       width: getHorizontalSize(
-                        190.00,
+                        232.00,
                       ),
                       margin: getMargin(
                         top: 12,
+                        right: 10
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Padding(
+                         Padding(
                             padding: getPadding(
                               top: 1,
+                              right: 5,
                             ),
                             child: Text(
-                              "lbl_11_30_pm".tr,
+                              homeItemModelObj.createTimeTxt.value,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtMulishRomanRegular14.copyWith(
                                 height: 1.00,
                               ),
+
                             ),
                           ),
                           Padding(
                             padding: getPadding(
                               top: 5,
-                              bottom: 9,
+                              bottom: 9, left: 6
                             ),
                             child: CommonImageView(
                               svgPath: ImageConstant.imgVector,
@@ -95,6 +97,7 @@ class HomeItemWidget extends StatelessWidget {
                               ),
                             ),
                           ),
+
                           Obx(
                             () => Text(
                               homeItemModelObj.emailTxt.value,
@@ -113,8 +116,8 @@ class HomeItemWidget extends StatelessWidget {
               ),
               Container(
                 margin: getMargin(
-                  left: 124,
-                  top: 11,
+                  left: 50,
+                  top: 5,
                   bottom: 11,
                 ),
                 padding: getPadding(

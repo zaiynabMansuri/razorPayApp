@@ -3,6 +3,7 @@ import 'package:razorpay_x_dhiwise/presentation/transection_details_screen/model
 import 'package:flutter/material.dart';
 import 'package:razorpay_x_dhiwise/data/models/payK93XyAnu5kuCXA/get_pay_k93_xy_anu5ku_c_x_a_resp.dart';
 import 'package:razorpay_x_dhiwise/data/apiClient/api_client.dart';
+import 'package:intl/intl.dart';
 
 class TransectionDetailsController extends GetxController {
   var transectionid = Get.arguments[NavigationArgs.transectionid];
@@ -36,6 +37,7 @@ class TransectionDetailsController extends GetxController {
   void callFetchPayK93XyAnu5kuCXA(
       {VoidCallback? successCall, VoidCallback? errCall}) async {
     return Get.find<ApiClient>().fetchPayK93XyAnu5kuCXA(
+      transectionId: transectionid,
         headers: {
           'Authorization':
               'Basic cnpwX3Rlc3RfUjhVVEZTMXFuRXZhVFE6dDZkalNkOVhpSFg5RFpPeU5rbU4xM05L',
@@ -72,14 +74,14 @@ class TransectionDetailsController extends GetxController {
   }
 
   void _onFetchPayK93XyAnu5kuCXASuccess() {
-    transectionDetailsModelObj.value.priceTxt.value =
-        getPayK93XyAnu5kuCXAResp.amount!.toString();
-    transectionDetailsModelObj.value.createdTxt.value =
-        getPayK93XyAnu5kuCXAResp.status!.toString();
-    transectionDetailsModelObj.value.mobileNoTxt.value =
-        getPayK93XyAnu5kuCXAResp.contact!.toString();
-    transectionDetailsModelObj.value.emailTxt.value =
-        getPayK93XyAnu5kuCXAResp.email!.toString();
+    transectionDetailsModelObj.value.priceTxt.value ="₹ "+ (getPayK93XyAnu5kuCXAResp.amount!/100)!.toString();
+    transectionDetailsModelObj.value.status.value = getPayK93XyAnu5kuCXAResp.status!.toString();
+    transectionDetailsModelObj.value.mobileNoTxt.value = getPayK93XyAnu5kuCXAResp.contact!.toString();
+    transectionDetailsModelObj.value.emailTxt.value = getPayK93XyAnu5kuCXAResp.email!.toString();
+    final df = new DateFormat('dd MMMM yyyy, hh:mm a');
+    var myvalue = getPayK93XyAnu5kuCXAResp.createdAt;
+    print(df.format(new DateTime.fromMillisecondsSinceEpoch(myvalue! * 1000)));
+    transectionDetailsModelObj.value.createdTxt.value = df.format(new DateTime.fromMillisecondsSinceEpoch(myvalue! * 1000)).toString();
   }
 
   void _onFetchPayK93XyAnu5kuCXAError() {}

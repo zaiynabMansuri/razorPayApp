@@ -2,6 +2,7 @@ import 'controller/transection_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:razorpay_x_dhiwise/core/app_export.dart';
 import 'package:razorpay_x_dhiwise/widgets/custom_text_form_field.dart';
+import 'package:flutter/services.dart';
 
 class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
   @override
@@ -110,7 +111,7 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                                       controller
                                                           .transectionDetailsModelObj
                                                           .value
-                                                          .createdTxt
+                                                          .status
                                                           .value,
                                                       overflow:
                                                           TextOverflow.ellipsis,
@@ -120,72 +121,7 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                                           .copyWith(
                                                               height: 1.00))))
                                             ]))),
-                                Container(
-                                    height: getVerticalSize(1.00),
-                                    width: getHorizontalSize(396.00),
-                                    margin:
-                                        getMargin(left: 16, top: 10, right: 16),
-                                    decoration: BoxDecoration(
-                                        color: ColorConstant.gray300)),
-                                Padding(
-                                    padding: getPadding(
-                                        left: 16, top: 13, right: 16),
-                                    child: Text("lbl_payment_link".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtMulishRomanSemiBold16
-                                            .copyWith(height: 1.00))),
-                                Align(
-                                    alignment: Alignment.center,
-                                    child: Padding(
-                                        padding: getPadding(
-                                            left: 16, top: 9, right: 16),
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              GestureDetector(
-                                                  onTap: () {
-                                                    onTapTxtHttpsrzpio();
-                                                  },
-                                                  child: Padding(
-                                                      padding:
-                                                          getPadding(top: 4),
-                                                      child: Text(
-                                                          "msg_https_rzp_io".tr,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
-                                                          textAlign:
-                                                              TextAlign.left,
-                                                          style: AppStyle
-                                                              .txtMulishRomanRegular18
-                                                              .copyWith(
-                                                                  height:
-                                                                      1.00)))),
-                                              Padding(
-                                                  padding:
-                                                      getPadding(bottom: 2),
-                                                  child: CommonImageView(
-                                                      svgPath: ImageConstant
-                                                          .imgDownload,
-                                                      height: getVerticalSize(
-                                                          22.00),
-                                                      width: getHorizontalSize(
-                                                          19.00)))
-                                            ]))),
-                                Container(
-                                    height: getVerticalSize(1.00),
-                                    width: getHorizontalSize(396.00),
-                                    margin: getMargin(
-                                        left: 16,
-                                        top: 8,
-                                        right: 16,
-                                        bottom: 23),
-                                    decoration: BoxDecoration(
-                                        color: ColorConstant.gray300))
+
                               ])),
                       Container(
                           width: double.infinity,
@@ -244,6 +180,13 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                                   padding:
                                                       getPadding(bottom: 3),
                                                   child: CommonImageView(
+                                                      onTap: () {
+                                                        Clipboard.setData(ClipboardData(text: controller
+                                                            .transectionDetailsModelObj
+                                                            .value
+                                                            .emailTxt
+                                                            .value));
+                                                      },
                                                       svgPath: ImageConstant
                                                           .imgDownload,
                                                       height: getVerticalSize(
@@ -300,7 +243,7 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                                   height:
                                                       getVerticalSize(22.00),
                                                   width:
-                                                      getHorizontalSize(19.00))
+                                                      getHorizontalSize(19.00), onTap: () {  },)
                                             ]))),
                                 Container(
                                     height: getVerticalSize(1.00),
@@ -322,36 +265,6 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Padding(
-                                    padding: getPadding(
-                                        left: 16, top: 18, right: 16),
-                                    child: Text("msg_additional_deta".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle
-                                            .txtMulishRomanBold18Bluegray800
-                                            .copyWith())),
-                                Padding(
-                                    padding: getPadding(
-                                        left: 16, top: 30, right: 16),
-                                    child: Text("lbl_expiry_date".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtMulishRomanSemiBold16
-                                            .copyWith(height: 1.00))),
-                                CustomTextFormField(
-                                    width: 396,
-                                    focusNode: FocusNode(),
-                                    controller: controller.timeController2,
-                                    hintText: "msg_25_may_2022_05".tr,
-                                    margin:
-                                        getMargin(left: 16, top: 15, right: 16),
-                                    variant:
-                                        TextFormFieldVariant.UnderLineGray300,
-                                    padding: TextFormFieldPadding.PaddingB8,
-                                    fontStyle: TextFormFieldFontStyle
-                                        .MulishRomanSemiBold18,
-                                    alignment: Alignment.center),
                                 Container(
                                     height: getVerticalSize(1.00),
                                     width: getHorizontalSize(396.00),
@@ -367,20 +280,25 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                         textAlign: TextAlign.left,
                                         style: AppStyle.txtMulishRomanSemiBold16
                                             .copyWith(height: 1.00))),
-                                CustomTextFormField(
-                                    width: 396,
-                                    focusNode: FocusNode(),
-                                    controller: controller.timeOneController1,
-                                    hintText: "msg_19_may_2022_06".tr,
-                                    margin:
-                                        getMargin(left: 16, top: 17, right: 16),
-                                    variant:
-                                        TextFormFieldVariant.UnderLineGray300,
-                                    padding: TextFormFieldPadding.PaddingB8,
-                                    fontStyle: TextFormFieldFontStyle
-                                        .MulishRomanSemiBold18,
-                                    textInputAction: TextInputAction.done,
-                                    alignment: Alignment.center),
+                                Padding(
+                                    padding: getPadding(
+                                      left : 20,
+                                        top: 2, bottom: 1),
+
+                                    child: Obx(() => Text(
+                                        controller
+                                            .transectionDetailsModelObj
+                                            .value
+                                            .createdTxt
+                                            .value,
+                                        overflow:
+                                        TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: AppStyle
+                                            .txtMulishRomanSemiBold18
+                                            .copyWith(
+                                            height: 1.00)))),
+
                                 Container(
                                     height: getVerticalSize(1.00),
                                     width: getHorizontalSize(396.00),
@@ -397,12 +315,5 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
 
   onTapImgArrowleft() {
     Get.back();
-  }
-
-  onTapTxtHttpsrzpio() async {
-    var url = 'https://rzp.io/i/zDUkgVHQ';
-    if (!await launch(url)) {
-      throw 'Could not launch https://rzp.io/i/zDUkgVHQ';
-    }
   }
 }

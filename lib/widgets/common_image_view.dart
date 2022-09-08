@@ -16,6 +16,7 @@ class CommonImageView extends StatelessWidget {
   double? width;
   final BoxFit fit;
   final String placeHolder;
+  Function? onTap;
 
   ///a [CommonNetworkImageView] it can be used for showing any network images
   /// it will shows the placeholder image if image is not found on network
@@ -28,6 +29,7 @@ class CommonImageView extends StatelessWidget {
     this.width,
     this.fit = BoxFit.fill,
     this.placeHolder = 'assets/images/image_not_found.png',
+    this.onTap
   });
 
   @override

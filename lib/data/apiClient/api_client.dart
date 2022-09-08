@@ -10,8 +10,7 @@ class ApiClient extends GetConnect {
     httpClient.timeout = Duration(seconds: 60);
     httpClient.addRequestModifier<dynamic>((request) {
       Map<String, String> headers = {
-        "X-Razorpay-Account": "{acc_id}",
-        "Authorization": "{{apiPrivateAuth}}",
+        "Authorization": "Basic cnpwX3Rlc3RfUjhVVEZTMXFuRXZhVFE6dDZkalNkOVhpSFg5RFpPeU5rbU4xM05L",
         "X-Dashboard-User-Id": "20000000000000",
         "X-Dashboard-User-Role": "owner",
         "Content-Type": "application/json"
@@ -39,12 +38,14 @@ class ApiClient extends GetConnect {
   Future fetchPayK93XyAnu5kuCXA(
       {Function(dynamic data)? onSuccess,
       Function(dynamic error)? onError,
-      Map<String, String> headers = const {}}) async {
+      Map<String, String> headers = const {},
+      required  String transectionId,
+      }) async {
     ProgressDialogUtils.showProgressDialog();
     try {
       await isNetworkConnected();
       Response response = await httpClient
-          .get('$url/v1/payments/pay_K93XyAnu5kuCXA', headers: headers);
+          .get('$url/v1/payments/$transectionId', headers: headers);
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
         onSuccess!(response.body);

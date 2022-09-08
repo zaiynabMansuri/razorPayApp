@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
 
 class ListpriceItemModel {
-  Rx<String> priceTxt = Rx('Lorem ipsum dolor sit amet');
+  Rx<String> priceTxt = Rx('price');
 
-  Rx<String> timeTxt = Rx('Lorem ipsum dolor sit amet');
+  Rx<String> timeTxt = Rx('time');
 
-  Rx<String> emailTxt = Rx('Lorem ipsum dolor sit amet');
+  Rx<String> emailTxt = Rx('email');
+  Rx<String> statusTxt = Rx('cancel');
 }

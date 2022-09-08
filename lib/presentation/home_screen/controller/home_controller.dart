@@ -3,6 +3,8 @@ import 'package:razorpay_x_dhiwise/presentation/home_screen/models/home_model.da
 import 'package:flutter/material.dart';
 import 'package:razorpay_x_dhiwise/data/models/payments/get_payments_resp.dart';
 import 'package:razorpay_x_dhiwise/data/apiClient/api_client.dart';
+import '../models/home_item_model.dart';
+import 'package:intl/intl.dart';
 
 class HomeController extends GetxController {
   Rx<HomeModel> homeModelObj = HomeModel().obs;
@@ -27,13 +29,13 @@ class HomeController extends GetxController {
 
   void callFetchPayments(
       {VoidCallback? successCall,
-      VoidCallback? errCall,
-      Map<String, dynamic> queryParams = const {}}) async {
+        VoidCallback? errCall,
+        Map<String, dynamic> queryParams = const {}}) async {
     return Get.find<ApiClient>().fetchPayments(
         headers: {
           'Content-type': 'application/json',
           'Authorization':
-              'Basic cnpwX3Rlc3RfUjhVVEZTMXFuRXZhVFE6dDZkalNkOVhpSFg5RFpPeU5rbU4xM05L',
+          'Basic cnpwX3Rlc3RfUjhVVEZTMXFuRXZhVFE6dDZkalNkOVhpSFg5RFpPeU5rbU4xM05L',
         },
         onSuccess: (resp) {
           onFetchPaymentsSuccess(resp);
@@ -67,7 +69,23 @@ class HomeController extends GetxController {
     }
   }
 
-  void _onFetchPaymentsSuccess() {}
+  void _onFetchPaymentsSuccess() {
+    List<HomeItemModel> homeItemModelList = [];
+    if (getPaymentsResp!.items! != null && getPaymentsResp!.items!.isNotEmpty) {
+      for (var element in getPaymentsResp!.items!) {
+        var homeItemModel = HomeItemModel();
+        homeItemModel.priceOneTxt.value = (element.amount!/100)!.toString();
+        homeItemModel.capturedTxt.value = element.status!.toString();
+        homeItemModel.emailTxt.value = element.email!.toString();
+        final DateTime docDateTime = DateTime.parse(element.createdAt!.toString());
+        homeItemModel.createTimeTxt.value =  DateFormat("hh:mm a").format(docDateTime);
+
+        homeItemModelList.add(homeItemModel);
+      }
+    }
+    homeModelObj.value.homeItemList.value = homeItemModelList;
+  }
+
   void _onFetchPaymentsError() {
     Get.defaultDialog(
         onConfirm: () => Get.back(),

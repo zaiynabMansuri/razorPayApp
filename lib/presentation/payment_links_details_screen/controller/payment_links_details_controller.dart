@@ -5,6 +5,7 @@ import 'package:razorpay_x_dhiwise/data/models/plinkK9lknSbunX2cgk/get_plink_k9l
 import 'package:razorpay_x_dhiwise/data/apiClient/api_client.dart';
 import 'package:razorpay_x_dhiwise/data/models/cancel/post_cancel_resp.dart';
 import 'package:razorpay_x_dhiwise/data/models/v1PaymentLinks/post_v1_payment_links_resp.dart';
+import 'package:intl/intl.dart';
 
 class PaymentLinksDetailsController extends GetxController {
   var paymentid = Get.arguments[NavigationArgs.paymentid];
@@ -79,14 +80,16 @@ class PaymentLinksDetailsController extends GetxController {
   }
 
   void _onFetchPlinkK9lknSbunX2cgkSuccess() {
-    paymentLinksDetailsModelObj.value.priceTxt.value =
-        getPlinkK9lknSbunX2cgkResp.amount!.toString();
+    paymentLinksDetailsModelObj.value.priceTxt.value = "₹ "+
+        (getPlinkK9lknSbunX2cgkResp.amount!/100)!.toString();
     paymentLinksDetailsModelObj.value.weburlTxt.value =
         getPlinkK9lknSbunX2cgkResp.shortUrl!.toString();
     paymentLinksDetailsModelObj.value.emailTxt.value =
         getPlinkK9lknSbunX2cgkResp.customer!.email!.toString();
-    paymentLinksDetailsModelObj.value.createdTxt.value =
-        getPlinkK9lknSbunX2cgkResp.status!.toString();
+    final DateTime docDateTime = DateTime.parse(getPlinkK9lknSbunX2cgkResp.createdAt!.toString());
+    // paymentLinksDetailsModelObj.createdTxt.value =  DateFormat("dd MMMM YYYY, hh:mm a").format(docDateTime);
+    // paymentLinksDetailsModelObj.value.createdTxt.value =
+    //     getPlinkK9lknSbunX2cgkResp.status!.toString();
     paymentLinksDetailsModelObj.value.inputLabelMFiveTxt.value =
         getPlinkK9lknSbunX2cgkResp.createdAt!.toString();
     Get.find<PrefUtils>()

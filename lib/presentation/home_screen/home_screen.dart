@@ -161,7 +161,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                               IconButtonPadding.PaddingAll18,
                                           alignment: Alignment.centerLeft,
                                           onTap: () {
-                                            onTapBtntf();
+                                            // onTapBtntf();
                                           },
                                           child: CommonImageView(
                                               svgPath: ImageConstant.imgLink)),
@@ -250,8 +250,11 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                               .homeItemList[index];
                                                                       return HomeItemWidget(
                                                                           model,
-                                                                          onTapRowprice:
-                                                                              onTapRowprice);
+                                                                          onTapRowprice:(){
+                                                                        Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
+                                                                          NavigationArgs.transectionid: controller.getPaymentsResp.items![index].id!
+                                                                        });
+                                                                      });
                                                                     })))),
                                                     Container(
                                                         height: getVerticalSize(
@@ -360,18 +363,16 @@ class HomeScreen extends GetWidget<HomeController> {
             ])));
   }
 
-  onTapRowprice() {
-    Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
-      NavigationArgs.transectionid: controller.getPaymentsResp.items!.id!
-    });
-  }
-
-  onTapBtntf() {
-// TODO: implement Actions
-  }
+//   onTapRowprice() {
+//     Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
+//       NavigationArgs.transectionid: controller.getPaymentsResp.items!.id!
+//     });
+//   }
+//
+//   onTapBtntf() {
+// // TODO: implement Actions
+//   }
   onTapColumnfolder() {
-    Get.toNamed(AppRoutes.transectionListScreen, arguments: {
-      NavigationArgs.transectioid: controller.getPaymentsResp.items!.id!
-    });
+    Get.toNamed(AppRoutes.transectionListScreen);
   }
 }
