@@ -267,7 +267,6 @@ class SubscriptionsPlanDetailsScreen
                                                                   .value
                                                                   .dropdownItemList.value,
                                                               onChanged: (value) {
-                                                                // print('object');
                                                                 planPrice.value = "₹ " +
                                                                     (int.parse(value
                                                                                 .price!) /
@@ -558,8 +557,7 @@ class SubscriptionsPlanDetailsScreen
                                                                   top: 14,
                                                                   right: 16),
                                                               validator: (value) {
-                                                                print(value);
-                                                                if (value ==
+                                                                 if (value ==
                                                                         null ||
                                                                     value
                                                                         .isEmpty ||

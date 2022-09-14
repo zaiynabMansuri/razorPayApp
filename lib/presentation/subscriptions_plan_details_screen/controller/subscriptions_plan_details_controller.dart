@@ -115,7 +115,6 @@ class SubscriptionsPlanDetailsController extends GetxController {
 
     for(int i=0;i<getPlansResp.items!.length;i++) {
       var name = getPlansResp.items![i].item!.name.toString();
-      print(name);
       var price = getPlansResp.items![i].item!.amount.toString();
       var planId = getPlansResp.items![i].id.toString();
       subscriptionsPlanDetailsModelObj.value.dropdownItemList.value.add(

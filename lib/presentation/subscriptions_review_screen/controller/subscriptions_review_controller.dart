@@ -65,8 +65,7 @@ class SubscriptionsReviewController extends GetxController {
     subscriptionsReviewModelObj.value.notes.value = await StorageHelper.getNotes("notes");
     subscriptionsReviewModelObj.value.amount.value = await StorageHelper.getAmount("Amount");
     subscriptionsReviewModelObj.refresh();
-    // print(amount);
-    // print(quantity);
+
   }
 
   void onCreateSubscriptionsSuccess(var response) {
