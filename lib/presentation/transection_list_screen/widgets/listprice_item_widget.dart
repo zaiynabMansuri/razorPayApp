@@ -48,7 +48,7 @@ class ListpriceItemWidget extends StatelessWidget {
                 ),
                 Container(
                   width: getHorizontalSize(
-                    255.00,
+                    265.00,
                   ),
                   margin: getMargin(
                     top: 12,
@@ -106,7 +106,7 @@ class ListpriceItemWidget extends StatelessWidget {
           ),
           Container(
             margin: getMargin(
-              left: 73,
+              left: 53,
               top: 11,
               bottom: 11,
             ),

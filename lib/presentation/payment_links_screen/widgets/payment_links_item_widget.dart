@@ -48,10 +48,10 @@ class PaymentLinksItemWidget extends StatelessWidget {
                 ),
                 Container(
                   width: getHorizontalSize(
-                    190.00,
+                    253.00,
                   ),
                   margin: getMargin(
-                    top: 12,
+                    top: 7,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,7 +60,7 @@ class PaymentLinksItemWidget extends StatelessWidget {
                     children: [
                       Padding(
                         padding: getPadding(
-                          top: 1,
+                          top: 1,right: 5,
                         ),
                         child: Text(
                           paymentLinksItemModelObj.createAt.value,
@@ -73,8 +73,8 @@ class PaymentLinksItemWidget extends StatelessWidget {
                       ),
                       Padding(
                         padding: getPadding(
-                          top: 5,
-                          bottom: 9,
+                          top: 2,
+                          bottom: 2,
                         ),
                         child: CommonImageView(
                           svgPath: ImageConstant.imgVectorBluegray500,
@@ -104,7 +104,7 @@ class PaymentLinksItemWidget extends StatelessWidget {
           ),
           Container(
             margin: getMargin(
-              left: 146,
+              left: 66,
               top: 11,
               bottom: 11,
             ),

@@ -655,11 +655,11 @@ class StandardPaymentLinkScreen
                                                                                   fontStyle: TextFormFieldFontStyle.MulishRomanMedium8,
                                                                                   textInputAction: TextInputAction.done,
                                                                                   alignment: Alignment.centerLeft),
-                                                                              Container(
-                                                                                  height: getVerticalSize(1.00),
-                                                                                  width: getHorizontalSize(368.00),
-                                                                                  margin: getMargin(top: 36, bottom: 36),
-                                                                                  decoration: BoxDecoration(color: ColorConstant.indigo100))
+                                                                              // Container(
+                                                                              //     height: getVerticalSize(1.00),
+                                                                              //     width: getHorizontalSize(368.00),
+                                                                              //     margin: getMargin(top: 36, bottom: 36),
+                                                                              //     decoration: BoxDecoration(color: ColorConstant.indigo100))
                                                                             ]))),
                                                                     Padding(
                                                                         padding: getPadding(
@@ -729,6 +729,7 @@ class StandardPaymentLinkScreen
   }
 
   void onTapBtnCreatelink() {
+    _formKey.currentState!.validate();
     _formKey.currentState!.validate();
     PostPaymentLinksReq postPaymentLinksReq = PostPaymentLinksReq(
     currency: "INR",
