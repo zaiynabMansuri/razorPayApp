@@ -98,6 +98,12 @@ class BorderRadiusStyle {
     ),
   );
 
+  static BorderRadius roundedBorder8 = BorderRadius.circular(
+    getHorizontalSize(
+      8.00,
+    ),
+  );
+
   static BorderRadius roundedBorder3 = BorderRadius.circular(
     getHorizontalSize(
       3.00,

@@ -176,23 +176,26 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                                           .txtMulishRomanSemiBold18
                                                           .copyWith(
                                                               height: 1.00)))),
-                                              Padding(
-                                                  padding:
-                                                      getPadding(bottom: 3),
-                                                  child: CommonImageView(
-                                                      onTap: () {
-                                                        Clipboard.setData(ClipboardData(text: controller
-                                                            .transectionDetailsModelObj
-                                                            .value
-                                                            .emailTxt
-                                                            .value));
-                                                      },
-                                                      svgPath: ImageConstant
-                                                          .imgDownload,
-                                                      height: getVerticalSize(
-                                                          22.00),
-                                                      width: getHorizontalSize(
-                                                          19.00)))
+                                              InkWell(
+                                                onTap: () {
+                                                  Clipboard.setData(ClipboardData(text: controller
+                                                      .transectionDetailsModelObj
+                                                      .value
+                                                      .emailTxt
+                                                      .value));
+                                                },
+                                                child: Padding(
+                                                    padding:
+                                                        getPadding(bottom: 3),
+                                                    child: CommonImageView(
+
+                                                        svgPath: ImageConstant
+                                                            .imgDownload,
+                                                        height: getVerticalSize(
+                                                            22.00),
+                                                        width: getHorizontalSize(
+                                                            19.00))),
+                                              )
                                             ]))),
                                 Container(
                                     height: getVerticalSize(1.00),
@@ -237,13 +240,23 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                                           .txtMulishRomanSemiBold18
                                                           .copyWith(
                                                               height: 1.00)))),
-                                              CommonImageView(
-                                                  svgPath:
-                                                      ImageConstant.imgDownload,
-                                                  height:
-                                                      getVerticalSize(22.00),
-                                                  width:
-                                                      getHorizontalSize(19.00), onTap: () {  },)
+                                              InkWell(
+                                                onTap: () {
+                                                  print("onTap Clipboard copy");
+                                                  Clipboard.setData(ClipboardData(text: controller
+                                                      .transectionDetailsModelObj
+                                                      .value
+                                                      .mobileNoTxt
+                                                      .value));
+                                                },
+                                                child: CommonImageView(
+                                                    svgPath:
+                                                        ImageConstant.imgDownload,
+                                                    height:
+                                                        getVerticalSize(22.00),
+                                                    width:
+                                                        getHorizontalSize(19.00)),
+                                              )
                                             ]))),
                                 Container(
                                     height: getVerticalSize(1.00),

@@ -80,7 +80,6 @@ class TransectionDetailsController extends GetxController {
     transectionDetailsModelObj.value.emailTxt.value = getPayK93XyAnu5kuCXAResp.email!.toString();
     final df = new DateFormat('dd MMMM yyyy, hh:mm a');
     var myvalue = getPayK93XyAnu5kuCXAResp.createdAt;
-    print(df.format(new DateTime.fromMillisecondsSinceEpoch(myvalue! * 1000)));
     transectionDetailsModelObj.value.createdTxt.value = df.format(new DateTime.fromMillisecondsSinceEpoch(myvalue! * 1000)).toString();
   }
 

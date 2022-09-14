@@ -2,7 +2,13 @@ class ImageConstant {
   static String imgVectorBluegray500 =
       'assets/images/img_vector_bluegray_500.svg';
 
+  static String imgVector1 = 'assets/images/img_vector_1.svg';
+  static String imgVector8X8 = 'assets/images/img_vector_8X8.svg';
+  static String imgVector18X16 = 'assets/images/img_vector_18X16.svg';
+  static String imgVector2 = 'assets/images/img_vector_2.svg';
+
   static String imgGroup298 = 'assets/images/img_group298.svg';
+  static String imgGroup216 = 'assets/images/img_group216.svg';
 
   static String imgVector = 'assets/images/img_vector.svg';
 
@@ -45,4 +51,7 @@ class ImageConstant {
   static String imgHome = 'assets/images/img_home.svg';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
-}
+
+  static String imgVector16X16 = 'assets/images/img_vector_16X16.svg';
+
+ }

@@ -24,7 +24,7 @@ class ListpriceItemWidget extends StatelessWidget {
         children: [
           Container(
             margin: getMargin(
-              top: 3,
+              top: 7,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -48,7 +48,7 @@ class ListpriceItemWidget extends StatelessWidget {
                 ),
                 Container(
                   width: getHorizontalSize(
-                    190.00,
+                    255.00,
                   ),
                   margin: getMargin(
                     top: 12,
@@ -75,8 +75,8 @@ class ListpriceItemWidget extends StatelessWidget {
                       ),
                       Padding(
                         padding: getPadding(
-                          top: 5,
-                          bottom: 9,
+                          top: 8,
+                          bottom: 9, right : 5
                         ),
                         child: CommonImageView(
                           svgPath: ImageConstant.imgVector,
@@ -106,7 +106,7 @@ class ListpriceItemWidget extends StatelessWidget {
           ),
           Container(
             margin: getMargin(
-              left: 146,
+              left: 73,
               top: 11,
               bottom: 11,
             ),

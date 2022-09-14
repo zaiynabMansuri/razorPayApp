@@ -1,3 +1,5 @@
+import '../payments/get_payments_resp.dart';
+
 class GetSubscriptionsResp {
   String? entity;
   int? count;
@@ -41,7 +43,7 @@ class Items {
   Null? currentEnd;
   Null? endedAt;
   int? quantity;
-  List? notes;
+  Notes? notes;
   int? chargeAt;
   int? startAt;
   int? endAt;
@@ -97,11 +99,8 @@ class Items {
     currentEnd = json['current_end'];
     endedAt = json['ended_at'];
     quantity = json['quantity'];
-    if (json['notes'] != null) {
-      notes = [];
-      json['notes'].forEach((v) {
-        notes?.add(v);
-      });
+    if(json['notes'] != null && json['notes'] is Map<String, dynamic>) {
+      notes = json['notes'] != null ? Notes.fromJson(json['notes']) : null;
     }
     chargeAt = json['charge_at'];
     startAt = json['start_at'];
@@ -150,8 +149,8 @@ class Items {
     if (this.quantity != null) {
       data['quantity'] = this.quantity;
     }
-    if (this.notes != null) {
-      data['notes'] = this.notes?.map((v) => v).toList();
+    if (this.notes != null && this.notes is Map<String,dynamic>) {
+      data['notes'] = this.notes?.toJson();
     }
     if (this.chargeAt != null) {
       data['charge_at'] = this.chargeAt;

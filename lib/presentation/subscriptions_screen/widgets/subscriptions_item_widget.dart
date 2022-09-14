@@ -65,7 +65,7 @@ class SubscriptionsItemWidget extends StatelessWidget {
           ),
           CustomButton(
             width: 60,
-            text: "lbl_issued".tr,
+            text: subscriptionsItemModelObj.statusTxt.value,
             margin: getMargin(
               left: 153,
               top: 11,

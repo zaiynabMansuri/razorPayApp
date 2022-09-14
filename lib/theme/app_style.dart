@@ -2,6 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:razorpay_x_dhiwise/core/app_export.dart';
 
 class AppStyle {
+  static TextStyle txtMulishRomanSemiBold14Bluegray500 = TextStyle(
+    color: ColorConstant.bluegray500,
+    fontSize: getFontSize(
+      14,
+    ),
+    fontFamily: 'Mulish',
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle txtMulishRomanSemiBold16Bluegray500 = TextStyle(
+    color: ColorConstant.bluegray500,
+    fontSize: getFontSize(
+      16,
+    ),
+    fontFamily: 'Mulish',
+    fontWeight: FontWeight.w600,
+  );
   static TextStyle txtMulishRomanSemiBold16 = TextStyle(
     color: ColorConstant.bluegray500,
     fontSize: getFontSize(

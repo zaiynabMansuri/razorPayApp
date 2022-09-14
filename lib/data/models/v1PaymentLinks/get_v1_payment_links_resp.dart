@@ -6,8 +6,8 @@ class GetV1PaymentLinksResp {
   GetV1PaymentLinksResp.fromJson(Map<String, dynamic> json) {
     if (json['payment_links'] != null) {
       paymentLinks = <PaymentLinks>[];
-      json['payment_links'].forEach((v) {
-        paymentLinks?.add(PaymentLinks.fromJson(v));
+      json['payment_links'].forEach((v){
+        paymentLinks!.add(PaymentLinks.fromJson(v));
       });
     }
   }
@@ -94,7 +94,9 @@ class PaymentLinks {
     expiredAt = json['expired_at'];
     firstMinPartialAmount = json['first_min_partial_amount'];
     id = json['id'];
-    notes = json['notes'] != null ? Notes.fromJson(json['notes']) : null;
+    if(json['notes'] != null && json['notes'] is Map<String, dynamic>) {
+      notes = json['notes'] != null ? Notes.fromJson(json['notes']) : null;
+    }
     notify = json['notify'] != null ? Notify.fromJson(json['notify']) : null;
     orderId = json['order_id'];
     if (json['payments'] != null) {
@@ -105,9 +107,11 @@ class PaymentLinks {
     }
     referenceId = json['reference_id'];
     reminderEnable = json['reminder_enable'];
-    reminders = json['reminders'] != null
-        ? Reminders.fromJson(json['reminders'])
-        : null;
+    if(json['reminders'] != null && json['reminders'] is Map<String, dynamic>) {
+      reminders = json['reminders'] != null
+          ? Reminders.fromJson(json['reminders'])
+          : null;
+    }
     shortUrl = json['short_url'];
     status = json['status'];
     updatedAt = json['updated_at'];
@@ -159,7 +163,7 @@ class PaymentLinks {
     if (this.id != null) {
       data['id'] = this.id;
     }
-    if (this.notes != null) {
+    if (this.notes != null && this.notes is Map<String,dynamic>) {
       data['notes'] = this.notes?.toJson();
     }
     if (this.notify != null) {

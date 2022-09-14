@@ -15,12 +15,10 @@ class HomeItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
-      child: GestureDetector(
-        onTap: () {
-          onTapRowprice!();
-        },
+    return InkWell(
+      onTap: onTapRowprice!,
+      child: Align(
+        alignment: Alignment.center,
         child: Padding(
           padding: getPadding(
             top: 16.0,
@@ -56,7 +54,7 @@ class HomeItemWidget extends StatelessWidget {
                     ),
                     Container(
                       width: getHorizontalSize(
-                        232.00,
+                        266.00,
                       ),
                       margin: getMargin(
                         top: 12,

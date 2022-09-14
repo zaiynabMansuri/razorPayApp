@@ -36,7 +36,7 @@ class PaymentLinksItemWidget extends StatelessWidget {
                     right: 10,
                   ),
                   child: Obx(
-                    () => Text(
+                        () => Text(
                       paymentLinksItemModelObj.priceOneTxt.value,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
@@ -63,7 +63,7 @@ class PaymentLinksItemWidget extends StatelessWidget {
                           top: 1,
                         ),
                         child: Text(
-                          "lbl_11_30_pm".tr,
+                          paymentLinksItemModelObj.createAt.value,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: AppStyle.txtMulishRomanRegular14.copyWith(
@@ -77,7 +77,7 @@ class PaymentLinksItemWidget extends StatelessWidget {
                           bottom: 9,
                         ),
                         child: CommonImageView(
-                          svgPath: ImageConstant.imgVector,
+                          svgPath: ImageConstant.imgVectorBluegray500,
                           height: getSize(
                             2.00,
                           ),
@@ -87,7 +87,7 @@ class PaymentLinksItemWidget extends StatelessWidget {
                         ),
                       ),
                       Obx(
-                        () => Text(
+                            () => Text(
                           paymentLinksItemModelObj.emailTxt.value,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
@@ -118,7 +118,7 @@ class PaymentLinksItemWidget extends StatelessWidget {
               borderRadius: BorderRadiusStyle.txtCircleBorder13,
             ),
             child: Obx(
-              () => Text(
+                  () => Text(
                 paymentLinksItemModelObj.issuedTxt.value,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,

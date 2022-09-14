@@ -161,7 +161,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                               IconButtonPadding.PaddingAll18,
                                           alignment: Alignment.centerLeft,
                                           onTap: () {
-                                            // onTapBtntf();
+                                            onTapBtntf();
                                           },
                                           child: CommonImageView(
                                               svgPath: ImageConstant.imgLink)),
@@ -358,6 +358,40 @@ class HomeScreen extends GetWidget<HomeController> {
                                                       style: AppStyle
                                                           .txtMulishRomanSemiBold14
                                                           .copyWith())))
+                                        ]))),
+                            GestureDetector(
+                                onTap: () {
+                                  goToSubscription();
+                                },
+                                child: Container(
+                                    margin: getMargin(top: 13),
+                                    child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                              padding: getPadding(
+                                                  left: 30, right: 30),
+                                              child: CommonImageView(
+                                                  svgPath:
+                                                  ImageConstant.imgVector1,
+                                                  height: getSize(26.00),
+                                                  width: getSize(26.00))),
+                                          Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: Padding(
+                                                  padding: getPadding(top: 10),
+                                                  child: Text(
+                                                      "lbl_subscriptions".tr,
+                                                      overflow:
+                                                      TextOverflow.ellipsis,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtMulishRomanSemiBold14Bluegray500
+                                                          .copyWith())))
                                         ])))
                           ])))
             ])));
@@ -369,10 +403,17 @@ class HomeScreen extends GetWidget<HomeController> {
 //     });
 //   }
 //
-//   onTapBtntf() {
-// // TODO: implement Actions
-//   }
+  onTapBtntf() {
+    // TODO: implement Actions
+    Get.toNamed(AppRoutes.paymentLinksScreen);
+  }
   onTapColumnfolder() {
     Get.toNamed(AppRoutes.transectionListScreen);
+  }
+
+  goToSubscription() {
+// TODO: implement Actions
+    Get.toNamed(AppRoutes.subscriptionsScreen);
+
   }
 }

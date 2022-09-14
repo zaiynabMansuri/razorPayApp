@@ -143,11 +143,11 @@ class ApiClient extends GetConnect {
     ProgressDialogUtils.showProgressDialog();
     try {
       await isNetworkConnected();
-      Response response = await httpClient.get('$url/v1/payment_links',
-          headers: headers, query: queryParams);
+       Response response = await httpClient.get('$url/v1/payment_links?count=${queryParams["count"]}',
+          headers: headers);
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
-        onSuccess!(response.body);
+         onSuccess!(response.body);
       } else {
         onError!(
           response.hasError ? response.statusText : 'Something Went Wrong!',
@@ -220,7 +220,7 @@ class ApiClient extends GetConnect {
     try {
       await isNetworkConnected();
       Response response =
-          await httpClient.get('$url/v1/subscriptions', headers: headers);
+          await httpClient.get('$url/v1/subscriptions?count=7', headers: headers);
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
         onSuccess!(response.body);

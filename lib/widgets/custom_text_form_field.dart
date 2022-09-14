@@ -13,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
       this.controller,
       this.focusNode,
       this.isObscureText = false,
+      this.isEnabled = true,
       this.textInputAction = TextInputAction.next,
       this.hintText,
       this.prefix,
@@ -40,6 +41,8 @@ class CustomTextFormField extends StatelessWidget {
   FocusNode? focusNode;
 
   bool? isObscureText;
+
+  bool isEnabled = true;
 
   TextInputAction? textInputAction;
 
@@ -72,6 +75,7 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,
+        enabled: isEnabled,
         style: _setFontStyle(),
         obscureText: isObscureText!,
         textInputAction: textInputAction,
@@ -212,15 +216,23 @@ enum TextFormFieldShape {
 enum TextFormFieldPadding {
   PaddingT16,
   PaddingB8,
+  PaddingT11
 }
 
 enum TextFormFieldVariant {
   OutlineGray300,
+  FillBluegray50,
   UnderLineGray300,
   OutlineBluegray101,
+  edittext3
 }
 
 enum TextFormFieldFontStyle {
   MulishRomanMedium16,
+  MulishRomanMedium16Bluegray901,
   MulishRomanSemiBold18,
+  MulishBold,MulishRomanMedium8,
+  MulishRomanBold24,
+  MulishMedium,
+  MulishMediumBluegray901
 }

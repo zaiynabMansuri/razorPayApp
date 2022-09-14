@@ -5,7 +5,7 @@ import 'package:razorpay_x_dhiwise/core/utils/validation_functions.dart';
 import 'package:razorpay_x_dhiwise/widgets/custom_button.dart';
 import 'package:razorpay_x_dhiwise/widgets/custom_checkbox.dart';
 import 'package:razorpay_x_dhiwise/widgets/custom_text_form_field.dart';
-import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/intl.dart';
 
 // ignore_for_file: must_be_immutable
 class SubscriptionsLinkDetailsScreen
@@ -26,630 +26,629 @@ class SubscriptionsLinkDetailsScreen
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                      Container(
-                          width: size.width,
-                          decoration:
+                          Container(
+                              width: size.width,
+                              decoration:
                               BoxDecoration(color: ColorConstant.gray900),
-                          child: Padding(
-                              padding: getPadding(
-                                  left: 24, top: 31, right: 199, bottom: 28),
-                              child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    GestureDetector(
-                                        onTap: () {
-                                          onTapImgArrowleft();
-                                        },
-                                        child: Padding(
-                                            padding: getPadding(bottom: 3),
-                                            child: CommonImageView(
-                                                svgPath:
-                                                    ImageConstant.imgArrowleft,
-                                                height: getVerticalSize(16.00),
-                                                width:
-                                                    getHorizontalSize(15.00)))),
-                                    Padding(
-                                        padding: getPadding(left: 24, top: 1),
-                                        child: Text("msg_create_subscrip".tr,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.left,
-                                            style: AppStyle
-                                                .txtMulishRomanSemiBold18WhiteA700
-                                                .copyWith()))
-                                  ]))),
-                      Expanded(
-                          child: SingleChildScrollView(
-                              padding: getPadding(top: 23),
-                              child: Container(
-                                  margin: getMargin(bottom: 24),
-                                  child: Column(
+                              child: Padding(
+                                  padding: getPadding(
+                                      left: 24, top: 31, right: 199, bottom: 28),
+                                  child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
                                       mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
                                       children: [
-                                        Align(
-                                            alignment: Alignment.centerLeft,
+                                        GestureDetector(
+                                            onTap: () {
+                                              onTapArrowleft();
+                                            },
                                             child: Padding(
-                                                padding: getPadding(
-                                                    left: 16, right: 16),
-                                                child: Text(
-                                                    "msg_provide_details".tr,
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                    textAlign: TextAlign.left,
-                                                    style: AppStyle
-                                                        .txtMulishRomanMedium16
-                                                        .copyWith(
-                                                            height: 1.00)))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: getPadding(
-                                                    left: 16,
-                                                    top: 28,
-                                                    right: 16),
+                                                padding: getPadding(bottom: 3),
                                                 child: CommonImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgGroup292Gray400,
-                                                    height:
+                                                    svgPath:
+                                                    ImageConstant.imgArrowleft,
+                                                    height: getVerticalSize(16.00),
+                                                    width:
+                                                    getHorizontalSize(15.00)))),
+                                        Padding(
+                                            padding: getPadding(left: 24, top: 1),
+                                            child: Text("msg_create_subscrip".tr,
+                                                overflow: TextOverflow.ellipsis,
+                                                textAlign: TextAlign.left,
+                                                style: AppStyle
+                                                    .txtMulishRomanSemiBold18
+                                                    .copyWith()))
+                                      ]))),
+                          Expanded(
+                              child: SingleChildScrollView(
+                                  padding: getPadding(top: 23),
+                                  child: Container(
+                                      margin: getMargin(bottom: 24),
+                                      child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                          children: [
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                    padding: getPadding(
+                                                        left: 16, right: 16),
+                                                    child: Text(
+                                                        "msg_provide_details".tr,
+                                                        overflow:
+                                                        TextOverflow.ellipsis,
+                                                        textAlign: TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtMulishRomanMedium16
+                                                            .copyWith(
+                                                            height: 1.00)))),
+                                            Align(
+                                                alignment: Alignment.center,
+                                                child: Padding(
+                                                    padding: getPadding(
+                                                        left: 16,
+                                                        top: 28,
+                                                        right: 16),
+                                                    child: CommonImageView(
+                                                        svgPath: ImageConstant
+                                                            .imgGroup292Gray400,
+                                                        height:
                                                         getVerticalSize(24.00),
-                                                    width: getHorizontalSize(
-                                                        360.00)))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: getPadding(
-                                                    left: 16,
-                                                    top: 18,
-                                                    right: 16),
-                                                child: Row(
-                                                    mainAxisAlignment:
+                                                        width: getHorizontalSize(
+                                                            360.00)))),
+                                            Align(
+                                                alignment: Alignment.center,
+                                                child: Padding(
+                                                    padding: getPadding(
+                                                        left: 16,
+                                                        top: 18,
+                                                        right: 16),
+                                                    child: Row(
+                                                        mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceBetween,
-                                                    crossAxisAlignment:
+                                                        crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .center,
-                                                    mainAxisSize:
+                                                        mainAxisSize:
                                                         MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 1),
-                                                          child: Text(
-                                                              "lbl_plan_details"
-                                                                  .tr,
-                                                              overflow:
+                                                        children: [
+                                                          Padding(
+                                                              padding: getPadding(
+                                                                  top: 1),
+                                                              child: Text(
+                                                                  "lbl_plan_details"
+                                                                      .tr,
+                                                                  overflow:
                                                                   TextOverflow
                                                                       .ellipsis,
-                                                              textAlign:
+                                                                  textAlign:
                                                                   TextAlign
                                                                       .left,
-                                                              style: AppStyle
-                                                                  .txtMulishRomanSemiBold16Bluegray800
-                                                                  .copyWith())),
-                                                      Row(
-                                                          crossAxisAlignment:
+                                                                  style: AppStyle
+                                                                      .txtMulishRomanSemiBold16
+                                                                      .copyWith())),
+                                                          Row(
+                                                              crossAxisAlignment:
                                                               CrossAxisAlignment
                                                                   .start,
-                                                          mainAxisSize:
+                                                              mainAxisSize:
                                                               MainAxisSize.max,
-                                                          children: [
-                                                            Padding(
-                                                                padding:
+                                                              children: [
+                                                                Padding(
+                                                                    padding:
                                                                     getPadding(
                                                                         top: 1),
-                                                                child: Text(
-                                                                    "lbl_link_details"
-                                                                        .tr,
-                                                                    overflow:
+                                                                    child: Text(
+                                                                        "lbl_link_details"
+                                                                            .tr,
+                                                                        overflow:
                                                                         TextOverflow
                                                                             .ellipsis,
-                                                                    textAlign:
+                                                                        textAlign:
                                                                         TextAlign
                                                                             .left,
-                                                                    style: AppStyle
-                                                                        .txtMulishRomanSemiBold16Bluegray800
-                                                                        .copyWith())),
-                                                            Padding(
-                                                                padding:
+                                                                        style: AppStyle
+                                                                            .txtMulishRomanSemiBold16
+                                                                            .copyWith())),
+                                                                Padding(
+                                                                    padding:
                                                                     getPadding(
                                                                         left:
-                                                                            95,
+                                                                        95,
                                                                         bottom:
-                                                                            17),
-                                                                child: Text(
-                                                                    "lbl_review"
-                                                                        .tr,
-                                                                    overflow:
+                                                                        17),
+                                                                    child: Text(
+                                                                        "lbl_review"
+                                                                            .tr,
+                                                                        overflow:
                                                                         TextOverflow
                                                                             .ellipsis,
-                                                                    textAlign:
+                                                                        textAlign:
                                                                         TextAlign
                                                                             .left,
-                                                                    style: AppStyle
-                                                                        .txtMulishRomanSemiBold16Bluegray800
-                                                                        .copyWith()))
-                                                          ])
-                                                    ]))),
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Padding(
-                                                padding: getPadding(
-                                                    left: 16,
-                                                    top: 38,
-                                                    right: 16),
-                                                child: Text(
-                                                    "lbl_link_details".tr,
-                                                    overflow:
+                                                                        style: AppStyle
+                                                                            .txtMulishRomanSemiBold16
+                                                                            .copyWith()))
+                                                              ])
+                                                        ]))),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                    padding: getPadding(
+                                                        left: 16,
+                                                        top: 38,
+                                                        right: 16),
+                                                    child: Text(
+                                                        "lbl_link_details".tr,
+                                                        overflow:
                                                         TextOverflow.ellipsis,
-                                                    textAlign: TextAlign.left,
-                                                    style: AppStyle
-                                                        .txtMulishRomanBold18Blue700
-                                                        .copyWith()))),
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Container(
-                                                width: double.infinity,
-                                                margin: getMargin(top: 18),
-                                                decoration:
+                                                        textAlign: TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtMulishRomanBold18
+                                                            .copyWith()))),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Container(
+                                                    width: double.infinity,
+                                                    margin: getMargin(top: 18),
+                                                    decoration:
                                                     AppDecoration.fillWhiteA700,
-                                                child: Column(
-                                                    mainAxisSize:
+                                                    child: Column(
+                                                        mainAxisSize:
                                                         MainAxisSize.min,
-                                                    crossAxisAlignment:
+                                                        crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .start,
-                                                    mainAxisAlignment:
+                                                        mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .center,
-                                                    children: [
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              left: 16,
-                                                              top: 26,
-                                                              right: 16),
-                                                          child: Text(
-                                                              "msg_customer_contac"
-                                                                  .tr,
-                                                              overflow:
+                                                        children: [
+                                                          Padding(
+                                                              padding: getPadding(
+                                                                  left: 16,
+                                                                  top: 26,
+                                                                  right: 16),
+                                                              child: Text(
+                                                                  "msg_customer_contac"
+                                                                      .tr,
+                                                                  overflow:
                                                                   TextOverflow
                                                                       .ellipsis,
-                                                              textAlign:
+                                                                  textAlign:
                                                                   TextAlign
                                                                       .left,
-                                                              style: AppStyle
-                                                                  .txtMulishRomanSemiBold16Bluegray800
-                                                                  .copyWith(
+                                                                  style: AppStyle
+                                                                      .txtMulishRomanSemiBold16
+                                                                      .copyWith(
                                                                       height:
-                                                                          1.00))),
-                                                      Container(
-                                                          height:
+                                                                      1.00))),
+                                                          Container(
+                                                              height:
                                                               getVerticalSize(
                                                                   1.00),
-                                                          width: size.width,
-                                                          margin: getMargin(
-                                                              top: 17),
-                                                          decoration: BoxDecoration(
-                                                              color:
+                                                              width: size.width,
+                                                              margin: getMargin(
+                                                                  top: 17),
+                                                              decoration: BoxDecoration(
+                                                                  color:
                                                                   ColorConstant
                                                                       .gray300)),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              left: 16,
-                                                              top: 17,
-                                                              right: 16),
-                                                          child: Text(
-                                                              "lbl_email_id".tr,
-                                                              overflow:
+                                                          Padding(
+                                                              padding: getPadding(
+                                                                  left: 16,
+                                                                  top: 17,
+                                                                  right: 16),
+                                                              child: Text(
+                                                                  "lbl_email_id".tr,
+                                                                  overflow:
                                                                   TextOverflow
                                                                       .ellipsis,
-                                                              textAlign:
+                                                                  textAlign:
                                                                   TextAlign
                                                                       .left,
-                                                              style: AppStyle
-                                                                  .txtMulishRomanSemiBold16Bluegray800
-                                                                  .copyWith(
+                                                                  style: AppStyle
+                                                                      .txtMulishRomanSemiBold16
+                                                                      .copyWith(
                                                                       height:
-                                                                          1.00))),
-                                                      CustomTextFormField(
-                                                          width: 396,
-                                                          focusNode:
+                                                                      1.00))),
+                                                          CustomTextFormField(
+                                                              width: 396,
+                                                              focusNode:
                                                               FocusNode(),
-                                                          controller: controller
-                                                              .emailController,
-                                                          hintText:
+                                                              controller: controller
+                                                                  .emailController,
+                                                              hintText:
                                                               "msg_john_example_co"
                                                                   .tr,
-                                                          margin: getMargin(
-                                                              left: 16,
-                                                              top: 10,
-                                                              right: 16),
-                                                          alignment:
+                                                              margin: getMargin(
+                                                                  left: 16,
+                                                                  top: 10,
+                                                                  right: 16),
+                                                              alignment:
                                                               Alignment.center,
-                                                          validator: (value) {
-                                                            if (value == null ||
-                                                                (!isValidEmail(
-                                                                    value,
-                                                                    isRequired:
+                                                              validator: (value) {
+                                                                if (value == null ||
+                                                                    (!isValidEmail(
+                                                                        value,
+                                                                        isRequired:
                                                                         true))) {
-                                                              return "Please enter valid email";
-                                                            }
-                                                            return null;
-                                                          }),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              left: 16,
-                                                              top: 26,
-                                                              right: 16),
-                                                          child: Text(
-                                                              "lbl_mobile_number"
-                                                                  .tr,
-                                                              overflow:
+                                                                  return "Please enter valid email";
+                                                                }
+                                                                return null;
+                                                              }),
+                                                          Padding(
+                                                              padding: getPadding(
+                                                                  left: 16,
+                                                                  top: 26,
+                                                                  right: 16),
+                                                              child: Text(
+                                                                  "lbl_mobile_number"
+                                                                      .tr,
+                                                                  overflow:
                                                                   TextOverflow
                                                                       .ellipsis,
-                                                              textAlign:
+                                                                  textAlign:
                                                                   TextAlign
                                                                       .left,
-                                                              style: AppStyle
-                                                                  .txtMulishRomanSemiBold16Bluegray800
-                                                                  .copyWith(
+                                                                  style: AppStyle
+                                                                      .txtMulishRomanSemiBold16
+                                                                      .copyWith(
                                                                       height:
-                                                                          1.00))),
-                                                      CustomTextFormField(
-                                                          width: 396,
-                                                          focusNode:
+                                                                      1.00))),
+                                                          CustomTextFormField(
+                                                              width: 396,
+                                                              focusNode:
                                                               FocusNode(),
-                                                          controller: controller
-                                                              .mobileNoController,
-                                                          hintText:
+                                                              controller: controller
+                                                                  .mobileNoController,
+                                                              hintText:
                                                               "lbl_91_1234567890"
                                                                   .tr,
-                                                          margin: getMargin(
-                                                              left: 16,
-                                                              top: 10,
-                                                              right: 16),
-                                                          variant:
+                                                              margin: getMargin(
+                                                                  left: 16,
+                                                                  top: 10,
+                                                                  right: 16),
+                                                              variant:
                                                               TextFormFieldVariant
                                                                   .OutlineBluegray101,
-                                                          shape:
+                                                              shape:
                                                               TextFormFieldShape
                                                                   .RoundedBorder6,
-                                                          alignment:
+                                                              validator: (value) {
+                                                                if (value == null ||
+                                                                    (!isValidPhone(
+                                                                        value,
+                                                                        isRequired:
+                                                                        true))) {
+                                                                  return "Please enter valid phone number";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              fontStyle:
+                                                              TextFormFieldFontStyle
+                                                                  .MulishRomanMedium16,
+                                                              alignment:
                                                               Alignment.center),
-                                                      Obx(() => CustomCheckbox(
-                                                          text:
+                                                          Obx(() => CustomCheckbox(
+                                                              text:
                                                               "lbl_notify_customer"
                                                                   .tr,
-                                                          iconSize: 16,
-                                                          value: controller
-                                                              .checkbox.value,
-                                                          padding: getPadding(
-                                                              left: 16,
-                                                              top: 25,
-                                                              right: 16,
-                                                              bottom: 24),
-                                                          onChange: (value) {
-                                                            controller.checkbox
-                                                                .value = value;
-                                                          }))
-                                                    ]))),
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Container(
-                                                width: double.infinity,
-                                                margin: getMargin(top: 16),
-                                                decoration:
+                                                              iconSize: 16,
+                                                              value: controller
+                                                                  .checkbox.value,
+                                                              padding: getPadding(
+                                                                  left: 16,
+                                                                  top: 25,
+                                                                  right: 16,
+                                                                  bottom: 24),
+                                                              onChange: (value) {
+                                                                controller.checkbox
+                                                                    .value = value;
+                                                              }))
+                                                        ]))),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Container(
+                                                    width: double.infinity,
+                                                    margin: getMargin(top: 16),
+                                                    decoration:
                                                     AppDecoration.fillWhiteA700,
-                                                child: Column(
-                                                    mainAxisSize:
+                                                    child: Column(
+                                                        mainAxisSize:
                                                         MainAxisSize.min,
-                                                    crossAxisAlignment:
+                                                        crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .start,
-                                                    mainAxisAlignment:
+                                                        mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .center,
-                                                    children: [
-                                                      Container(
-                                                          margin: getMargin(
-                                                              left: 16,
-                                                              top: 28,
-                                                              right: 16),
-                                                          child: RichText(
-                                                              text: TextSpan(
-                                                                  children: [
-                                                                    TextSpan(
-                                                                        text: "lbl_link_expiry2"
-                                                                            .tr,
-                                                                        style: TextStyle(
-                                                                            color: ColorConstant
-                                                                                .bluegray800,
-                                                                            fontSize: getFontSize(
-                                                                                16),
-                                                                            fontFamily:
+                                                        children: [
+                                                          Container(
+                                                              margin: getMargin(
+                                                                  left: 16,
+                                                                  top: 28,
+                                                                  right: 16),
+                                                              child: RichText(
+                                                                  text: TextSpan(
+                                                                      children: [
+                                                                        TextSpan(
+                                                                            text: "lbl_link_expiry2"
+                                                                                .tr,
+                                                                            style: TextStyle(
+                                                                                color: ColorConstant
+                                                                                    .bluegray800,
+                                                                                fontSize: getFontSize(
+                                                                                    16),
+                                                                                fontFamily:
                                                                                 'Mulish',
-                                                                            fontWeight:
+                                                                                fontWeight:
                                                                                 FontWeight.w600,
-                                                                            height: 1.00)),
-                                                                    TextSpan(
-                                                                        text: "lbl"
-                                                                            .tr,
-                                                                        style: TextStyle(
-                                                                            color: ColorConstant
-                                                                                .red700,
-                                                                            fontSize: getFontSize(
-                                                                                16),
-                                                                            fontFamily:
+                                                                                height: 1.00)),
+                                                                        TextSpan(
+                                                                            text: "lbl"
+                                                                                .tr,
+                                                                            style: TextStyle(
+                                                                                color: ColorConstant
+                                                                                    .red700,
+                                                                                fontSize: getFontSize(
+                                                                                    16),
+                                                                                fontFamily:
                                                                                 'Mulish',
-                                                                            fontWeight:
+                                                                                fontWeight:
                                                                                 FontWeight.w600,
-                                                                            height: 1.00))
-                                                                  ]),
-                                                              textAlign:
+                                                                                height: 1.00))
+                                                                      ]),
+                                                                  textAlign:
                                                                   TextAlign
                                                                       .left)),
-                                                      Container(
-                                                          height:
+                                                          Container(
+                                                              height:
                                                               getVerticalSize(
                                                                   1.00),
-                                                          width: size.width,
-                                                          margin: getMargin(
-                                                              top: 15),
-                                                          decoration: BoxDecoration(
-                                                              color:
+                                                              width: size.width,
+                                                              margin: getMargin(
+                                                                  top: 15),
+                                                              decoration: BoxDecoration(
+                                                                  color:
                                                                   ColorConstant
                                                                       .gray300)),
-                                                      Align(
-                                                          alignment:
+                                                          Align(
+                                                              alignment:
                                                               Alignment.center,
-                                                          child: Padding(
-                                                              padding:
+                                                              child: Padding(
+                                                                  padding:
                                                                   getPadding(
                                                                       left: 16,
                                                                       top: 15,
                                                                       right:
-                                                                          16),
-                                                              child: Row(
-                                                                  mainAxisAlignment:
+                                                                      16),
+                                                                  child: Row(
+                                                                      mainAxisAlignment:
                                                                       MainAxisAlignment
                                                                           .spaceBetween,
-                                                                  crossAxisAlignment:
+                                                                      crossAxisAlignment:
                                                                       CrossAxisAlignment
                                                                           .center,
-                                                                  mainAxisSize:
+                                                                      mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
-                                                                  children: [
-                                                                    Container(
-                                                                        margin: getMargin(
-                                                                            top:
+                                                                      children: [
+                                                                        Container(
+                                                                            margin: getMargin(
+                                                                                top:
                                                                                 2),
-                                                                        child: Column(
-                                                                            mainAxisSize:
+                                                                            child: Column(
+                                                                                mainAxisSize:
                                                                                 MainAxisSize.min,
-                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                            mainAxisAlignment: MainAxisAlignment.start,
-                                                                            children: [
-                                                                              Padding(padding: getPadding(right: 10), child: Text("lbl_date".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtMulishRomanSemiBold16Bluegray800.copyWith(height: 1.00))),
-                                                                              Obx(() => Container(
-                                                                                  height: getVerticalSize(44.00),
-                                                                                  width: getHorizontalSize(190.00),
-                                                                                  margin: getMargin(top: 10),
-                                                                                  child: TableCalendar(
-                                                                                      locale: 'en_US',
-                                                                                      firstDay: DateTime(DateTime.now().year - 5),
-                                                                                      lastDay: DateTime(DateTime.now().year + 5),
-                                                                                      calendarFormat: CalendarFormat.month,
-                                                                                      rangeSelectionMode: controller.rangeSelectionMode.value,
-                                                                                      startingDayOfWeek: StartingDayOfWeek.monday,
-                                                                                      headerStyle: HeaderStyle(formatButtonVisible: false, titleCentered: true),
-                                                                                      calendarStyle: CalendarStyle(outsideDaysVisible: false, isTodayHighlighted: false),
-                                                                                      focusedDay: controller.focusedDay.value,
-                                                                                      rangeStartDay: controller.rangeStart,
-                                                                                      rangeEndDay: controller.rangeEnd,
-                                                                                      onDaySelected: (selectedDay, focusedDay) {
-                                                                                        if (!isSameDay(controller.selectedDay, selectedDay)) {
-                                                                                          controller.focusedDay.value = focusedDay;
-                                                                                          controller.selectedDay = selectedDay;
-                                                                                          controller.rangeSelectionMode.value = RangeSelectionMode.toggledOff;
-                                                                                        }
-                                                                                      },
-                                                                                      onRangeSelected: (start, end, focusedDay) {
-                                                                                        controller.focusedDay.value = focusedDay;
-                                                                                        controller.rangeEnd = end;
-                                                                                        controller.rangeStart = start;
-                                                                                        controller.rangeSelectionMode.value = RangeSelectionMode.toggledOn;
-                                                                                      },
-                                                                                      onPageChanged: (focusedDay) {
-                                                                                        controller.focusedDay.value = focusedDay;
-                                                                                      })))
-                                                                            ])),
-                                                                    Container(
-                                                                        margin: getMargin(
-                                                                            top:
-                                                                                2),
-                                                                        child: Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.min,
-                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                            mainAxisAlignment: MainAxisAlignment.start,
-                                                                            children: [
-                                                                              Padding(padding: getPadding(right: 10), child: Text("lbl_time".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtMulishRomanSemiBold16Bluegray800.copyWith(height: 1.00))),
-                                                                              CustomTextFormField(width: 190, focusNode: FocusNode(), controller: controller.timeController1, hintText: "lbl_12_00_am".tr, margin: getMargin(top: 10), textInputAction: TextInputAction.done, suffix: Container(margin: getMargin(left: 30, top: 13, right: 13, bottom: 13), child: CommonImageView(svgPath: ImageConstant.imgVectorBluegray500)), suffixConstraints: BoxConstraints(minWidth: getHorizontalSize(16.00), minHeight: getVerticalSize(16.00)))
-                                                                            ]))
-                                                                  ]))),
-                                                      Obx(() => CustomCheckbox(
-                                                          text: "lbl_no_expiry"
-                                                              .tr,
-                                                          iconSize: 16,
-                                                          value: controller
-                                                              .checkbox1.value,
-                                                          padding: getPadding(
-                                                              left: 16,
-                                                              top: 25,
-                                                              right: 16,
-                                                              bottom: 24),
-                                                          onChange: (value) {
-                                                            controller.checkbox1
-                                                                .value = value;
-                                                          }))
-                                                    ]))),
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Container(
-                                                width: double.infinity,
-                                                margin: getMargin(top: 16),
-                                                decoration:
-                                                    AppDecoration.fillWhiteA700,
-                                                child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              left: 16,
-                                                              top: 26,
-                                                              right: 16),
-                                                          child: Text(
-                                                              "lbl_internal_note"
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                mainAxisAlignment: MainAxisAlignment.start,
+                                                                                children: [
+                                                                                  Padding(padding: getPadding(right: 10), child: Text("lbl_date".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtMulishRomanSemiBold16.copyWith(height: 1.00))),
+                                                                                  Obx(
+                                                                                        ()=> InkWell(
+                                                                                      onTap:controller.chooseDate,
+
+                                                                                      child:
+                                                                                            CustomTextFormField(
+                                                                                                width: 190,
+                                                                                                isEnabled: false,
+                                                                                                focusNode:
+                                                                                                FocusNode(),
+                                                                                                hintText: DateFormat(
+                                                                                                    "dd-MM-yyyy")
+                                                                                                    .format(controller
+                                                                                                    .selectedDate
+                                                                                                    .value)
+                                                                                                    .toString(),
+                                                                                                    margin: getMargin(top: 10),
+
+                                                                                                variant: TextFormFieldVariant
+                                                                                                    .OutlineBluegray101,
+                                                                                                shape:
+                                                                                                TextFormFieldShape
+                                                                                                    .RoundedBorder6,
+                                                                                                fontStyle:
+                                                                                                TextFormFieldFontStyle
+                                                                                                    .MulishRomanMedium16,
+                                                                                                alignment:
+                                                                                                Alignment.center,
+                                                                                                suffix: Container(margin: getMargin(left: 30, top: 12, right: 13, bottom: 12),
+                                                                                                         child: CommonImageView(svgPath: ImageConstant.imgVector18X16)), suffixConstraints: BoxConstraints(minWidth: getHorizontalSize(16.00), minHeight: getVerticalSize(18.00))
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  // CustomTextFormField(width: 190, focusNode: FocusNode(), controller: controller.dateController, hintText: "lbl_30_06_2022".tr, margin: getMargin(top: 10), suffix: Container(margin: getMargin(left: 30, top: 12, right: 13, bottom: 12),
+                                                                                  //     child: CommonImageView(svgPath: ImageConstant.imgVector18X16)), suffixConstraints: BoxConstraints(minWidth: getHorizontalSize(16.00), minHeight: getVerticalSize(18.00)))
+                                                                                ])),
+                                                                        // Container(
+                                                                        //     margin: getMargin(
+                                                                        //         top:
+                                                                        //         2),
+                                                                        //     child: Column(
+                                                                        //         mainAxisSize:
+                                                                        //         MainAxisSize.min,
+                                                                        //         crossAxisAlignment: CrossAxisAlignment.start,
+                                                                        //         mainAxisAlignment: MainAxisAlignment.start,
+                                                                        //         children: [
+                                                                        //           Padding(padding: getPadding(right: 10), child: Text("lbl_time".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtMulishRomanSemiBold16.copyWith(height: 1.00))),
+                                                                        //           CustomTextFormField(width: 190, focusNode: FocusNode(), controller: controller.timeController, hintText: "lbl_12_00_am".tr, margin: getMargin(top: 10), suffix: Container(margin: getMargin(left: 30, top: 13, right: 13, bottom: 13), child: CommonImageView(svgPath: ImageConstant.imgVector2)), suffixConstraints: BoxConstraints(minWidth: getHorizontalSize(16.00), minHeight: getVerticalSize(16.00)))
+                                                                        //         ]))
+                                                                      ]))),
+                                                          Obx(() => CustomCheckbox(
+                                                              text: "lbl_no_expiry"
                                                                   .tr,
-                                                              overflow:
-                                                                  TextOverflow
-                                                                      .ellipsis,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .left,
-                                                              style: AppStyle
-                                                                  .txtMulishRomanSemiBold16Bluegray800
-                                                                  .copyWith(
-                                                                      height:
-                                                                          1.00))),
-                                                      Align(
-                                                          alignment:
-                                                              Alignment.center,
-                                                          child: Container(
-                                                              width: double
-                                                                  .infinity,
-                                                              margin: getMargin(
+                                                              iconSize: 16,
+                                                              value: controller
+                                                                  .checkbox1.value,
+                                                              padding: getPadding(
                                                                   left: 16,
-                                                                  top: 9,
+                                                                  top: 25,
                                                                   right: 16,
                                                                   bottom: 24),
-                                                              decoration: AppDecoration
-                                                                  .outlineIndigo100
-                                                                  .copyWith(
+                                                              onChange: (value) {
+                                                                controller.checkbox1
+                                                                    .value = value;
+                                                              }))
+                                                        ]))),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Container(
+                                                    width: double.infinity,
+                                                    margin: getMargin(top: 16),
+                                                    decoration:
+                                                    AppDecoration.fillWhiteA700,
+                                                    child: Column(
+                                                        mainAxisSize:
+                                                        MainAxisSize.min,
+                                                        crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                        mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                        children: [
+                                                          Padding(
+                                                              padding: getPadding(
+                                                                  left: 16,
+                                                                  top: 26,
+                                                                  right: 16),
+                                                              child: Text(
+                                                                  "lbl_internal_note"
+                                                                      .tr,
+                                                                  overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                                  textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                                  style: AppStyle
+                                                                      .txtMulishRomanSemiBold16
+                                                                      .copyWith(
+                                                                      height:
+                                                                      1.00))),
+                                                          Align(
+                                                              alignment:
+                                                              Alignment.center,
+                                                              child: Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  margin: getMargin(
+                                                                      left: 16,
+                                                                      top: 9,
+                                                                      right: 16,
+                                                                      bottom: 24),
+                                                                  decoration: AppDecoration
+                                                                      .outlineIndigo100
+                                                                      .copyWith(
                                                                       borderRadius:
-                                                                          BorderRadiusStyle
-                                                                              .roundedBorder3),
-                                                              child: Column(
-                                                                  mainAxisSize:
+                                                                      BorderRadiusStyle
+                                                                          .roundedBorder3),
+                                                                  child: Column(
+                                                                      mainAxisSize:
                                                                       MainAxisSize
                                                                           .min,
-                                                                  crossAxisAlignment:
+                                                                      crossAxisAlignment:
                                                                       CrossAxisAlignment
                                                                           .end,
-                                                                  mainAxisAlignment:
+                                                                      mainAxisAlignment:
                                                                       MainAxisAlignment
                                                                           .start,
-                                                                  children: [
-                                                                    Align(
-                                                                        alignment:
+                                                                      children: [
+                                                                        Align(
+                                                                            alignment:
                                                                             Alignment.center,
-                                                                        child: Container(
-                                                                            height: getVerticalSize(74.00),
-                                                                            width: getHorizontalSize(368.00),
-                                                                            margin: getMargin(left: 16, top: 12, right: 12),
-                                                                            child: Stack(alignment: Alignment.centerLeft, children: [
-                                                                              Align(
-                                                                                  alignment: Alignment.center,
-                                                                                  child: Padding(
-                                                                                      padding: getPadding(top: 6, right: 6, bottom: 4),
-                                                                                      child: Row(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.max, children: [
-                                                                                        Container(
-                                                                                            margin: getMargin(top: 1),
-                                                                                            child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: [
-                                                                                              Text("lbl_pay_test".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtMulishRomanMedium16Bluegray901.copyWith(height: 1.00)),
-                                                                                              Padding(padding: getPadding(left: 1, top: 29, right: 10), child: Text("lbl_text".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtMulishRomanMedium16Bluegray300.copyWith(height: 1.00)))
-                                                                                            ])),
-                                                                                        Padding(padding: getPadding(left: 289, bottom: 51), child: CommonImageView(svgPath: ImageConstant.imgClose, height: getSize(12.00), width: getSize(12.00)))
-                                                                                      ]))),
-                                                                              Container(height: getVerticalSize(1.00), width: getHorizontalSize(368.00), margin: getMargin(top: 36, bottom: 36), decoration: BoxDecoration(color: ColorConstant.indigo100))
-                                                                            ]))),
-                                                                    Padding(
-                                                                        padding: getPadding(
-                                                                            left:
+                                                                            child: Container(
+                                                                                height: getVerticalSize(74.00),
+                                                                                width: getHorizontalSize(368.00),
+                                                                                margin: getMargin(left: 16, top: 12, right: 12),
+                                                                                child: Stack(alignment: Alignment.topCenter, children: [
+                                                                                  Align(
+                                                                                      alignment: Alignment.centerLeft,
+                                                                                      child: Container(
+                                                                                          margin: getMargin(top: 1),
+                                                                                          child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: [
+                                                                                            CustomTextFormField(width: 320, focusNode: FocusNode(), controller: controller.paytestController, hintText: "lbl_pay_test".tr, variant: TextFormFieldVariant.edittext3, fontStyle: TextFormFieldFontStyle.MulishMediumBluegray901)
+                                                                                          ]))),
+                                                                                  Align(alignment: Alignment.topCenter, child: Padding(padding: getPadding(left: 289, bottom: 51), child: CommonImageView(imagePath: ImageConstant.imageNotFound, height: getSize(12.00), width: getSize(12.00)))),
+                                                                                  Container(height: getVerticalSize(1.00), width: getHorizontalSize(368.00), margin: getMargin(top: 3, bottom: 3), decoration: BoxDecoration(color: ColorConstant.indigo100))
+                                                                                ]))),
+                                                                        Padding(
+                                                                            padding: getPadding(
+                                                                                left:
                                                                                 373,
-                                                                            top:
+                                                                                top:
                                                                                 19,
-                                                                            right:
+                                                                                right:
                                                                                 7,
-                                                                            bottom:
+                                                                                bottom:
                                                                                 7),
-                                                                        child: CommonImageView(
-                                                                            svgPath:
-                                                                                ImageConstant.imgEdit,
-                                                                            height: getSize(16.00),
-                                                                            width: getSize(16.00)))
-                                                                  ])))
-                                                    ]))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: getPadding(
-                                                    left: 16,
-                                                    top: 56,
-                                                    right: 16),
-                                                child: Row(
-                                                    mainAxisAlignment:
+                                                                            child: CommonImageView(
+                                                                                svgPath:
+                                                                                ImageConstant.imgGroup216,
+                                                                                height: getSize(16.00),
+                                                                                width: getSize(16.00)))
+                                                                      ])))
+                                                        ]))),
+                                            Align(
+                                                alignment: Alignment.center,
+                                                child: Padding(
+                                                    padding: getPadding(
+                                                        left: 16,
+                                                        top: 56,
+                                                        right: 16),
+                                                    child: Row(
+                                                        mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceBetween,
-                                                    crossAxisAlignment:
+                                                        crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .center,
-                                                    mainAxisSize:
+                                                        mainAxisSize:
                                                         MainAxisSize.max,
-                                                    children: [
-                                                      CustomButton(
-                                                          width: 190,
-                                                          text:
+                                                        children: [
+                                                          CustomButton(
+                                                              width: 190,
+                                                              text:
                                                               "lbl_previous".tr,
-                                                          variant: ButtonVariant
-                                                              .OutlineGray300,
-                                                          shape: ButtonShape
-                                                              .Square,
-                                                          padding: ButtonPadding
-                                                              .PaddingAll17,
-                                                          fontStyle:
+                                                              variant: ButtonVariant
+                                                                  .OutlineGray300,
+                                                              fontStyle:
                                                               ButtonFontStyle
                                                                   .GilroyMedium16,
-                                                          onTap:
+                                                              onTap:
                                                               onTapBtnPrevious),
-                                                      CustomButton(
-                                                          width: 190,
-                                                          text: "lbl_next".tr,
-                                                          variant: ButtonVariant
-                                                              .FillBlue700,
-                                                          shape: ButtonShape
-                                                              .Square,
-                                                          padding: ButtonPadding
-                                                              .PaddingAll17,
-                                                          fontStyle: ButtonFontStyle
-                                                              .MulishRomanMedium18,
-                                                          onTap: onTapBtnNext)
-                                                    ])))
-                                      ]))))
-                    ])))));
+                                                          CustomButton(
+                                                              width: 190,
+                                                              text: "lbl_next".tr,
+                                                              onTap: onTapNext)
+                                                        ])))
+                                          ]))))
+                        ])))));
   }
 
-  onTapImgArrowleft() {
+  onTapArrowleft() {
     Get.back();
   }
 
@@ -657,7 +656,11 @@ class SubscriptionsLinkDetailsScreen
     Get.toNamed(AppRoutes.subscriptionsPlanDetailsScreen);
   }
 
-  onTapBtnNext() {
-    Get.toNamed(AppRoutes.subscriptionsReviewScreen);
+  onTapNext() {
+    controller.saveToPrefs();
+    if(_formKey.currentState!.validate()) {
+      Get.toNamed(AppRoutes.subscriptionsReviewScreen);
+    }
+
   }
 }

@@ -11,30 +11,22 @@ class SplashscreenScreen extends GetWidget<SplashscreenController> {
             body: Container(
                 width: size.width,
                 child: SingleChildScrollView(
-                    child: GestureDetector(
-                        onTap: () {
-                          onTapSplashscreen();
-                        },
-                        child: Container(
-                            height: size.height,
-                            width: size.width,
-                            child: Stack(children: [
-                              Align(
-                                  alignment: Alignment.center,
-                                  child: Padding(
-                                      padding: getPadding(
-                                          left: 40,
-                                          top: 40,
-                                          right: 40,
-                                          bottom: 20),
-                                      child: CommonImageView(
-                                          imagePath: ImageConstant.imgImage1,
-                                          height: getVerticalSize(58.00),
-                                          width: getHorizontalSize(275.00))))
-                            ])))))));
-  }
-
-  onTapSplashscreen() {
-    Get.toNamed(AppRoutes.homeScreen);
+                    child: Container(
+                        height: size.height,
+                        width: size.width,
+                        child: Stack(children: [
+                          Align(
+                              alignment: Alignment.center,
+                              child: Padding(
+                                  padding: getPadding(
+                                      left: 40,
+                                      top: 40,
+                                      right: 40,
+                                      bottom: 20),
+                                  child: CommonImageView(
+                                      imagePath: ImageConstant.imgImage1,
+                                      height: getVerticalSize(58.00),
+                                      width: getHorizontalSize(275.00))))
+                        ]))))));
   }
 }

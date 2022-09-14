@@ -7,6 +7,9 @@ class SplashscreenController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    Future.delayed(const Duration(milliseconds: 5000), () {
+      Get.offNamed(AppRoutes.homeScreen);
+    });
   }
 
   @override

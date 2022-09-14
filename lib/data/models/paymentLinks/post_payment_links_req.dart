@@ -1,3 +1,5 @@
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
+
 class PostPaymentLinksReq {
   int? amount;
   String? currency;
@@ -26,7 +28,7 @@ class PostPaymentLinksReq {
       this.reminderEnable,
       this.notes,
       this.callbackUrl,
-      this.callbackMethod});
+      this.callbackMethod, });
 
   PostPaymentLinksReq.fromJson(Map<String, dynamic> json) {
     amount = json['amount'];
