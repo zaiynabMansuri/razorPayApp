@@ -153,6 +153,6 @@ class PaymentLinksScreen extends GetWidget<PaymentLinksController> {
 
   onTapButton() {
 // TODO: implement Actions
-    Get.toNamed(AppRoutes.standardPaymentLinkScreen);
+    Get.offNamed(AppRoutes.standardPaymentLinkScreen);
   }
 }

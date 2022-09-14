@@ -242,7 +242,6 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                                               height: 1.00)))),
                                               InkWell(
                                                 onTap: () {
-                                                  print("onTap Clipboard copy");
                                                   Clipboard.setData(ClipboardData(text: controller
                                                       .transectionDetailsModelObj
                                                       .value

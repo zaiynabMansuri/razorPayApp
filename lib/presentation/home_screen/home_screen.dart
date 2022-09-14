@@ -397,11 +397,11 @@ class HomeScreen extends GetWidget<HomeController> {
             ])));
   }
 
-//   onTapRowprice() {
-//     Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
-//       NavigationArgs.transectionid: controller.getPaymentsResp.items!.id!
-//     });
-//   }
+  // onTapRowprice() {
+  //   Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
+  //     NavigationArgs.transectionid: controller.getPaymentsResp.items!.id!
+  //   });
+  // }
 //
   onTapBtntf() {
     // TODO: implement Actions

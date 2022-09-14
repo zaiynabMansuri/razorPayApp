@@ -73,12 +73,13 @@ class TransectionListController extends GetxController {
 
   void _onFetchPaymentsSuccess() {
     List<ListpriceItemModel> listpriceItemModelList = [];
-    if (getPaymentsResp!.items! != null && getPaymentsResp!.items!.isNotEmpty) {
-      for (var element in getPaymentsResp!.items!) {
+    if (getPaymentsResp.items! != null && getPaymentsResp.items!.isNotEmpty) {
+      for (var element in getPaymentsResp.items!) {
         var listpriceItemModel = ListpriceItemModel();
-        listpriceItemModel.priceTxt.value = "₹ "+ (element.amount!/100)!.toString();
+        listpriceItemModel.priceTxt.value = "₹ "+ (element.amount!/100).toString();
         listpriceItemModel.emailTxt.value = element.email!.toString();
         listpriceItemModel.statusTxt.value = element.status!.toString();
+        listpriceItemModel.itemId.value = element.id!;
         final DateTime docDateTime = DateTime.parse(element.createdAt!.toString());
         listpriceItemModel.timeTxt.value = DateFormat("hh:mm a").format(docDateTime);
         listpriceItemModelList.add(listpriceItemModel);

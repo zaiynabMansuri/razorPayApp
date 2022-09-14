@@ -13,25 +13,14 @@ class SubscriptionsReviewController extends GetxController {
 
   PostSubscriptionsResp postSubscriptionsResp = PostSubscriptionsResp();
 
-  var plan;
-  var totalCount;
-  var quantity;
-  var startAt;
-  var expireAt;
-  var customer_notify;
-  var notify_phone;
-  var notify_email;
-  var noExpiry;
-  var notes;
-  var planName;
-  var amount;
-  var firstPayment;
+
 
 
   @override
   void onReady() {
-    super.onReady();
     getPlan();
+    super.onReady();
+
   }
 
   @override
@@ -63,20 +52,21 @@ class SubscriptionsReviewController extends GetxController {
   }
 
   getPlan() async {
-    plan = await StorageHelper.getPlan("Plan_id");
-    totalCount = await StorageHelper.getCount("total_count");
-    quantity = await StorageHelper.getQuantity("quantity");
-    planName = await StorageHelper.getPlanName("planName");
-    startAt = await StorageHelper.getStartDate("start_at");
-    expireAt = await StorageHelper.getExpireDate("expire_by");
-    customer_notify = await StorageHelper.getCustomerNotify("customer_notify");
-    notify_phone = await StorageHelper.getMobile("notify_phone");
-    notify_email = await StorageHelper.getEmail("notify_email");
-    noExpiry = await StorageHelper.getNoExpiry("noExpiry");
-    notes = await StorageHelper.getNotes("notes");
-    amount = await StorageHelper.getAmount("Amount");
-    print(amount);
-    print(quantity);
+    subscriptionsReviewModelObj.value.plan.value = await StorageHelper.getPlan("Plan_id");
+    subscriptionsReviewModelObj.value.totalCount.value = await StorageHelper.getCount("total_count");
+    subscriptionsReviewModelObj.value.quantity.value = await StorageHelper.getQuantity("quantity");
+    subscriptionsReviewModelObj.value.planName.value = await StorageHelper.getPlanName("planName");
+    subscriptionsReviewModelObj.value.startAt.value = await StorageHelper.getStartDate("start_at");
+    subscriptionsReviewModelObj.value.expireAt.value = await StorageHelper.getExpireDate("expire_by");
+    subscriptionsReviewModelObj.value.customer_notify.value = await StorageHelper.getCustomerNotify("customer_notify");
+    subscriptionsReviewModelObj.value.notify_phone.value = await StorageHelper.getMobile("notify_phone");
+    subscriptionsReviewModelObj.value.notify_email.value = await StorageHelper.getEmail("notify_email");
+    subscriptionsReviewModelObj.value.noExpiry.value = await StorageHelper.getNoExpiry("noExpiry");
+    subscriptionsReviewModelObj.value.notes.value = await StorageHelper.getNotes("notes");
+    subscriptionsReviewModelObj.value.amount.value = await StorageHelper.getAmount("Amount");
+    subscriptionsReviewModelObj.refresh();
+    // print(amount);
+    // print(quantity);
   }
 
   void onCreateSubscriptionsSuccess(var response) {
@@ -84,15 +74,13 @@ class SubscriptionsReviewController extends GetxController {
   }
 
   void onCreateSubscriptionsError(var err) {
-    if (err is NoInternetException) {
-      Get.rawSnackbar(
-        messageText: Text(
-          '$err',
-          style: TextStyle(
-            color: Colors.white,
-          ),
+    Get.rawSnackbar(
+      messageText: Text(
+        '$err',
+        style: TextStyle(
+          color: Colors.white,
         ),
-      );
-    }
+      ),
+    );
   }
 }

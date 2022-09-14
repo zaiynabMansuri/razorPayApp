@@ -105,7 +105,13 @@ class TransectionListScreen extends GetWidget<TransectionListController> {
                                     .transectionListModelObj
                                     .value
                                     .listpriceItemList[index];
-                                return ListpriceItemWidget(model);
+                                return ListpriceItemWidget(
+                                    model,
+                                    onTapRowprice:(){
+                                      Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
+                                        NavigationArgs.transectionid: controller.transectionListModelObj.value.listpriceItemList[index].itemId
+                                      });
+                                    });
                               }))),
                       Container(
                           height: getVerticalSize(1.00),

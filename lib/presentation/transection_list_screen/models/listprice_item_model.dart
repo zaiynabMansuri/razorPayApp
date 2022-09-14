@@ -7,4 +7,6 @@ class ListpriceItemModel {
 
   Rx<String> emailTxt = Rx('email');
   Rx<String> statusTxt = Rx('cancel');
+  Rx<String> itemId = Rx('');
+
 }

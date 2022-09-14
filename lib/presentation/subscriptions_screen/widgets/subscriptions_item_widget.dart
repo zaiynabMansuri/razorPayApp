@@ -24,9 +24,11 @@ class SubscriptionsItemWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           Container(
+            width: 165,
             margin: getMargin(
               top: 5,
               bottom: 2,
+              right: 20,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -67,7 +69,7 @@ class SubscriptionsItemWidget extends StatelessWidget {
             width: 60,
             text: subscriptionsItemModelObj.statusTxt.value,
             margin: getMargin(
-              left: 153,
+              left: 120,
               top: 11,
               bottom: 11,
             ),

@@ -25,7 +25,7 @@ class SubscriptionsScreen extends GetWidget<SubscriptionsController> {
                               BoxDecoration(color: ColorConstant.gray900),
                           child: Padding(
                               padding: getPadding(
-                                  left: 24, top: 31, right: 250, bottom: 28),
+                                  left: 24, top: 31, right: 240, bottom: 28),
                               child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -157,6 +157,6 @@ class SubscriptionsScreen extends GetWidget<SubscriptionsController> {
   }
 
   onTapButton() {
-    Get.toNamed(AppRoutes.subscriptionsPlanDetailsScreen);
+    Get.offNamed(AppRoutes.subscriptionsPlanDetailsScreen);
   }
 }

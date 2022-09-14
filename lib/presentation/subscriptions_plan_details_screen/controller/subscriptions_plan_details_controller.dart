@@ -79,7 +79,7 @@ class SubscriptionsPlanDetailsController extends GetxController {
 
   onSelected(dynamic value) {
     selectedDropDownValue = value as SelectionPopupModel;
-    subscriptionsPlanDetailsModelObj.value.dropdownItemList.forEach((element) {
+    subscriptionsPlanDetailsModelObj.value.dropdownItemList.value.forEach((element) {
       element.isSelected = false;
       if (element.id == value.id) {
         element.isSelected = true;
@@ -117,14 +117,15 @@ class SubscriptionsPlanDetailsController extends GetxController {
       var name = getPlansResp.items![i].item!.name.toString();
       print(name);
       var price = getPlansResp.items![i].item!.amount.toString();
-      var planId = getPlansResp.items![i]!.id.toString();
-      subscriptionsPlanDetailsModelObj.value.dropdownItemList.add(
+      var planId = getPlansResp.items![i].id.toString();
+      subscriptionsPlanDetailsModelObj.value.dropdownItemList.value.add(
         SelectionPopupModel(
             id: planId,
             title: name,
             price: price,
             isSelected: i==0? true: false),
       );
+      subscriptionsPlanDetailsModelObj.value.dropdownItemList.refresh();
     }
   }
 
