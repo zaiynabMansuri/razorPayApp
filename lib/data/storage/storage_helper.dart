@@ -1,18 +1,19 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageHelper{
-  //
-  // Future<void> saveMyName(String name) async {
-  //   final pref = await SharedPreferences.getInstance();
-  //   pref.setString("name", name);
-  // }
-  //
-  // Future<void> getMyName() async {
-  //   final pref = await SharedPreferences.getInstance();
-  //   pref.getString("name");
-  // }
 
 // Write DATA
+  static Future<bool> savePlanName(key,value) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return await sharedPreferences.setString(key, value);
+  }
+
+// Read Data
+  static Future getPlanName(key) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getString(key);
+  }
+
   static Future<bool> savePlan(key,value) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     return await sharedPreferences.setString(key, value);

@@ -269,10 +269,10 @@ class SubscriptionsPlanDetailsScreen
                                                                   .dropdownItemList,
                                                               onChanged: (value) {
                                                                 planPrice.value = "₹ " + (int.parse(value.price!)/100).toString();
+                                                                StorageHelper.savePlanName("planName",value.title.toString());
                                                                 StorageHelper.savePlan("Plan_id", value.id.toString());
-                                                                StorageHelper.saveAmount("Amount", value.price.toString());
-                                                                controller
-                                                                    .onSelected(value);
+                                                                StorageHelper.saveAmount("Amount", (int.parse(value.price!)/100).toString());
+                                                                controller.onSelected(value);
                                                               }),
                                                         ),
                                                         Align(

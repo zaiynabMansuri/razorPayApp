@@ -13,11 +13,25 @@ class SubscriptionsReviewController extends GetxController {
 
   PostSubscriptionsResp postSubscriptionsResp = PostSubscriptionsResp();
 
+  var plan;
+  var totalCount;
+  var quantity;
+  var startAt;
+  var expireAt;
+  var customer_notify;
+  var notify_phone;
+  var notify_email;
+  var noExpiry;
+  var notes;
+  var planName;
+  var amount;
+  var firstPayment;
+
+
   @override
   void onReady() {
     super.onReady();
     getPlan();
-
   }
 
   @override
@@ -31,9 +45,8 @@ class SubscriptionsReviewController extends GetxController {
         headers: {
           'Content-Type': 'application/json',
           'Authorization':
-          'Basic cnpwX3Rlc3RfUjhVVEZTMXFuRXZhVFE6dDZkalNkOVhpSFg5RFpPeU5rbU4xM05L',
+              'Basic cnpwX3Rlc3RfUjhVVEZTMXFuRXZhVFE6dDZkalNkOVhpSFg5RFpPeU5rbU4xM05L',
         },
-
         onSuccess: (resp) {
           onCreateSubscriptionsSuccess(resp);
           if (successCall != null) {
@@ -49,34 +62,21 @@ class SubscriptionsReviewController extends GetxController {
         requestData: req);
   }
 
-  getPlan() async{
-    var plan = await StorageHelper.getPlan("Plan_id");
-    var totalCount = await StorageHelper.getCount("total_count");
-    var quantity = await StorageHelper.getQuantity("quantity");
-
-    var startAt = await StorageHelper.getStartDate("start_at");
-    var expireAt = await StorageHelper.getExpireDate("expire_by");
-    print("####################33");
-    print(startAt);
-    print("%%%%%%%%%%%%%%%555");
-    print(expireAt);
-    var customer_notify = await StorageHelper.getCustomerNotify("customer_notify");
-    var notify_phone = await StorageHelper.getMobile("notify_phone");
-    var notify_email = await StorageHelper.getEmail("notify_email");
-    var noExpiry = await StorageHelper.getNoExpiry("noExpiry");
-    var notes = await StorageHelper.getNotes("notes");
-
-    // PostSubscriptionsReq req = PostSubscriptionsReq(
-    //   planId: plan,
-    //   totalCount: totalCount,
-    //   customerNotify: customer_notify? 1 : 0,
-    //   expireBy: noExpiry? expireAt : 0,
-    //   notes: Notes1(notesKey1:notes),
-    //   quantity: quantity,
-    //   startAt: startAt,
-    //   notifyInfo: NotifyInfo(notifyEmail: notify_email,notifyPhone: notify_phone),
-    // );
-
+  getPlan() async {
+    plan = await StorageHelper.getPlan("Plan_id");
+    totalCount = await StorageHelper.getCount("total_count");
+    quantity = await StorageHelper.getQuantity("quantity");
+    planName = await StorageHelper.getPlanName("planName");
+    startAt = await StorageHelper.getStartDate("start_at");
+    expireAt = await StorageHelper.getExpireDate("expire_by");
+    customer_notify = await StorageHelper.getCustomerNotify("customer_notify");
+    notify_phone = await StorageHelper.getMobile("notify_phone");
+    notify_email = await StorageHelper.getEmail("notify_email");
+    noExpiry = await StorageHelper.getNoExpiry("noExpiry");
+    notes = await StorageHelper.getNotes("notes");
+    amount = await StorageHelper.getAmount("Amount");
+    print(amount);
+    print(quantity);
   }
 
   void onCreateSubscriptionsSuccess(var response) {

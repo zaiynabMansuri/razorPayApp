@@ -115,6 +115,7 @@ class SubscriptionsPlanDetailsController extends GetxController {
 
     for(int i=0;i<getPlansResp.items!.length;i++) {
       var name = getPlansResp.items![i].item!.name.toString();
+      print(name);
       var price = getPlansResp.items![i].item!.amount.toString();
       var planId = getPlansResp.items![i]!.id.toString();
       subscriptionsPlanDetailsModelObj.value.dropdownItemList.add(
@@ -122,7 +123,7 @@ class SubscriptionsPlanDetailsController extends GetxController {
             id: planId,
             title: name,
             price: price,
-            isSelected: i==0?true: false),
+            isSelected: i==0? true: false),
       );
     }
   }

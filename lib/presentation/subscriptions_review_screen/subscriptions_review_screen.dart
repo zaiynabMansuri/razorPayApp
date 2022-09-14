@@ -1,3 +1,4 @@
+import '../../data/storage/storage_helper.dart';
 import 'controller/subscriptions_review_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:razorpay_x_dhiwise/core/app_export.dart';
@@ -155,21 +156,13 @@ class SubscriptionsReviewScreen
                                             Padding(
                                                 padding: getPadding(
                                                     left: 16, top: 17, right: 16),
-                                                child: Text("lbl_test_1".tr,
+                                                child: Text( controller.planName ?? "",
                                                     overflow: TextOverflow.ellipsis,
                                                     textAlign: TextAlign.left,
                                                     style: AppStyle
                                                         .txtMulishRomanSemiBold16
                                                         .copyWith(height: 1.00))),
-                                            Padding(
-                                                padding: getPadding(
-                                                    left: 16, top: 13, right: 16),
-                                                child: Text("msg_every_week_the".tr,
-                                                    overflow: TextOverflow.ellipsis,
-                                                    textAlign: TextAlign.left,
-                                                    style: AppStyle
-                                                        .txtMulishRomanSemiBold16
-                                                        .copyWith(height: 1.00))),
+
                                             Align(
                                                 alignment: Alignment.center,
                                                 child: Padding(
@@ -244,8 +237,7 @@ class SubscriptionsReviewScreen
                                                                                           fontWeight: FontWeight.w600,
                                                                                           height: 1.00)),
                                                                                   TextSpan(
-                                                                                      text: "lbl_15_00"
-                                                                                          .tr,
+                                                                                      text: "₹ " + controller.amount.toString(),
                                                                                       style: TextStyle(
                                                                                           color: ColorConstant.blue700,
                                                                                           fontSize: getFontSize(16),
@@ -291,8 +283,7 @@ class SubscriptionsReviewScreen
                                                                                       top:
                                                                                       1),
                                                                                   child: Text(
-                                                                                      "msg_15_00_1_qua"
-                                                                                          .tr,
+                                                                                      "${controller.amount} x ${controller.quantity} (quantity)",
                                                                                       overflow: TextOverflow
                                                                                           .ellipsis,
                                                                                       textAlign: TextAlign
@@ -336,8 +327,7 @@ class SubscriptionsReviewScreen
                                                                                           fontWeight: FontWeight.w600,
                                                                                           height: 1.00)),
                                                                                   TextSpan(
-                                                                                      text: "lbl_15_002"
-                                                                                          .tr,
+                                                                                      text: controller.amount.toString(),
                                                                                       style: TextStyle(
                                                                                           color: ColorConstant.blue700,
                                                                                           fontSize: getFontSize(16),
@@ -384,8 +374,7 @@ class SubscriptionsReviewScreen
                                                                                       bottom:
                                                                                       1),
                                                                                   child: Text(
-                                                                                      "lbl_5"
-                                                                                          .tr,
+                                                                                      controller.totalCount.toString(),
                                                                                       overflow: TextOverflow
                                                                                           .ellipsis,
                                                                                       textAlign: TextAlign
@@ -411,8 +400,19 @@ class SubscriptionsReviewScreen
   }
 
   void onTapBtnCreatesubscrip2() {
-    PostSubscriptionsReq postSubscriptionsReq = PostSubscriptionsReq(
+    /*PostSubscriptionsReq postSubscriptionsReq = PostSubscriptionsReq(
       planId: Get.find<PrefUtils>().getPaymentLinkId(),
+    );*/
+    PostSubscriptionsReq postSubscriptionsReq = PostSubscriptionsReq(
+      planId: controller.plan,
+      totalCount: int.tryParse(controller.totalCount),
+      customerNotify: controller.customer_notify ? 1 : 0,
+      expireBy: controller.noExpiry ? controller.expireAt : 0,
+      notes: Notes1(notesKey1: controller.notes),
+      quantity: int.tryParse(controller.quantity),
+      startAt: controller.startAt,
+      notifyInfo:
+      NotifyInfo(notifyEmail: controller.notify_email, notifyPhone: controller.notify_phone),
     );
     controller.callCreateSubscriptions(
       postSubscriptionsReq.toJson(),
@@ -423,6 +423,7 @@ class SubscriptionsReviewScreen
 
   void _onCreateSubscriptionsSuccess() {
 // TODO: implement Actions
+    Get.toNamed(AppRoutes.subscriptionsScreen);
   }
   void _onCreateSubscriptionsError() {
     Get.defaultDialog(
