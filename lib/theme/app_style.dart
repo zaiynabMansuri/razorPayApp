@@ -46,7 +46,7 @@ class AppStyle {
   );
 
   static TextStyle txtMulishRomanSemiBold18 = TextStyle(
-    color: ColorConstant.bluegray901,
+    color: ColorConstant.whiteA700,
     fontSize: getFontSize(
       18,
     ),
@@ -117,7 +117,7 @@ class AppStyle {
   );
 
   static TextStyle txtMulishRomanBold18 = TextStyle(
-    color: ColorConstant.whiteA700,
+    color: ColorConstant.blue700,
     fontSize: getFontSize(
       18,
     ),

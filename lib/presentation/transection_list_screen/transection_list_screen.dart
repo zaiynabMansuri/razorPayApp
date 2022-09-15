@@ -109,7 +109,7 @@ class TransectionListScreen extends GetWidget<TransectionListController> {
                                     model,
                                     onTapRowprice:(){
                                       Get.toNamed(AppRoutes.transectionDetailsScreen, arguments: {
-                                        NavigationArgs.transectionid: controller.transectionListModelObj.value.listpriceItemList[index].itemId
+                                        NavigationArgs.transectionid: controller.transectionListModelObj.value.listpriceItemList[index].itemId.value
                                       });
                                     });
                               }))),

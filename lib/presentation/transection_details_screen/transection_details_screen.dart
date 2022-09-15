@@ -154,49 +154,53 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                     child: Padding(
                                         padding: getPadding(
                                             left: 16, top: 12, right: 16),
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Padding(
-                                                  padding: getPadding(top: 4),
-                                                  child: Obx(() => Text(
-                                                      controller
-                                                          .transectionDetailsModelObj
-                                                          .value
-                                                          .emailTxt
-                                                          .value,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      textAlign: TextAlign.left,
-                                                      style: AppStyle
-                                                          .txtMulishRomanSemiBold18
-                                                          .copyWith(
-                                                              height: 1.00)))),
-                                              InkWell(
-                                                onTap: () {
-                                                  Clipboard.setData(ClipboardData(text: controller
-                                                      .transectionDetailsModelObj
-                                                      .value
-                                                      .emailTxt
-                                                      .value));
-                                                },
-                                                child: Padding(
-                                                    padding:
-                                                        getPadding(bottom: 3),
-                                                    child: CommonImageView(
+                                        child:Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                    padding: getPadding(top: 4),
+                                                    child: Obx(
+                                                      (){
+                                                        return Text(
+                                                          controller
+                                                              .transectionDetailsModelObj
+                                                              .value
+                                                              .emailTxt
+                                                              .value,
+                                                          overflow:
+                                                              TextOverflow.ellipsis,
+                                                          textAlign: TextAlign.left,
+                                                          style: AppStyle
+                                                              .txtMulishRomanBold24
+                                                              .copyWith(
+                                                                  height: 1.00));},
+                                                    )),
+                                                InkWell(
+                                                  onTap: () {
+                                                    Clipboard.setData(ClipboardData(text: controller
+                                                        .transectionDetailsModelObj
+                                                        .value
+                                                        .emailTxt
+                                                        .value));
+                                                  },
+                                                  child: Padding(
+                                                      padding:
+                                                          getPadding(bottom: 3),
+                                                      child: CommonImageView(
 
-                                                        svgPath: ImageConstant
-                                                            .imgDownload,
-                                                        height: getVerticalSize(
-                                                            22.00),
-                                                        width: getHorizontalSize(
-                                                            19.00))),
-                                              )
-                                            ]))),
+                                                          svgPath: ImageConstant
+                                                              .imgDownload,
+                                                          height: getVerticalSize(
+                                                              22.00),
+                                                          width: getHorizontalSize(
+                                                              19.00))),
+                                                )
+                                              ]),
+                                        ),),
                                 Container(
                                     height: getVerticalSize(1.00),
                                     width: getHorizontalSize(396.00),
@@ -217,46 +221,48 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                     child: Padding(
                                         padding: getPadding(
                                             left: 16, top: 12, right: 16),
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Padding(
-                                                  padding: getPadding(
-                                                      top: 2, bottom: 1),
-                                                  child: Obx(() => Text(
-                                                      controller
-                                                          .transectionDetailsModelObj
-                                                          .value
-                                                          .mobileNoTxt
-                                                          .value,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      textAlign: TextAlign.left,
-                                                      style: AppStyle
-                                                          .txtMulishRomanSemiBold18
-                                                          .copyWith(
-                                                              height: 1.00)))),
-                                              InkWell(
-                                                onTap: () {
-                                                  Clipboard.setData(ClipboardData(text: controller
-                                                      .transectionDetailsModelObj
-                                                      .value
-                                                      .mobileNoTxt
-                                                      .value));
-                                                },
-                                                child: CommonImageView(
-                                                    svgPath:
-                                                        ImageConstant.imgDownload,
-                                                    height:
-                                                        getVerticalSize(22.00),
-                                                    width:
-                                                        getHorizontalSize(19.00)),
-                                              )
-                                            ]))),
+                                        child: Obx(
+                                          ()=> Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                    padding: getPadding(
+                                                        top: 2, bottom: 1),
+                                                    child: Text(
+                                                        controller
+                                                            .transectionDetailsModelObj
+                                                            .value
+                                                            .mobileNoTxt
+                                                            .value,
+                                                        overflow:
+                                                            TextOverflow.ellipsis,
+                                                        textAlign: TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtMulishRomanBold24
+                                                            .copyWith(
+                                                                height: 1.00))),
+                                                InkWell(
+                                                  onTap: () {
+                                                    Clipboard.setData(ClipboardData(text: controller
+                                                        .transectionDetailsModelObj
+                                                        .value
+                                                        .mobileNoTxt
+                                                        .value));
+                                                  },
+                                                  child: CommonImageView(
+                                                      svgPath:
+                                                          ImageConstant.imgDownload,
+                                                      height:
+                                                          getVerticalSize(22.00),
+                                                      width:
+                                                          getHorizontalSize(19.00)),
+                                                )
+                                              ]),
+                                        ))),
                                 Container(
                                     height: getVerticalSize(1.00),
                                     width: getHorizontalSize(396.00),
@@ -307,7 +313,7 @@ class TransectionDetailsScreen extends GetWidget<TransectionDetailsController> {
                                         TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: AppStyle
-                                            .txtMulishRomanSemiBold18
+                                            .txtMulishRomanBold24
                                             .copyWith(
                                             height: 1.00)))),
 

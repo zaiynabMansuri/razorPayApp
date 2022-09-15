@@ -61,26 +61,25 @@ class TransectionDetailsController extends GetxController {
   }
 
   void onFetchPayK93XyAnu5kuCXAError(var err) {
-    if (err is NoInternetException) {
-      Get.rawSnackbar(
-        messageText: Text(
-          '$err',
-          style: TextStyle(
-            color: Colors.white,
-          ),
+    Get.rawSnackbar(
+      messageText: Text(
+        '$err',
+        style: TextStyle(
+          color: Colors.white,
         ),
-      );
-    }
+      ),
+    );
   }
 
   void _onFetchPayK93XyAnu5kuCXASuccess() {
-    transectionDetailsModelObj.value.priceTxt.value ="₹ "+ (getPayK93XyAnu5kuCXAResp.amount!/100)!.toString();
+     transectionDetailsModelObj.value.priceTxt.value ="₹ "+ (getPayK93XyAnu5kuCXAResp.amount!/100)!.toString();
     transectionDetailsModelObj.value.status.value = getPayK93XyAnu5kuCXAResp.status!.toString();
     transectionDetailsModelObj.value.mobileNoTxt.value = getPayK93XyAnu5kuCXAResp.contact!.toString();
     transectionDetailsModelObj.value.emailTxt.value = getPayK93XyAnu5kuCXAResp.email!.toString();
     final df = new DateFormat('dd MMMM yyyy, hh:mm a');
     var myvalue = getPayK93XyAnu5kuCXAResp.createdAt;
     transectionDetailsModelObj.value.createdTxt.value = df.format(new DateTime.fromMillisecondsSinceEpoch(myvalue! * 1000)).toString();
+    transectionDetailsModelObj.refresh();
   }
 
   void _onFetchPayK93XyAnu5kuCXAError() {}

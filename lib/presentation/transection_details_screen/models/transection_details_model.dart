@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 
 class TransectionDetailsModel {
-  Rx<String> priceTxt = Rx('5');
+  Rx<String> priceTxt = Rx('');
 
-  Rx<String> status = Rx('created');
+  Rx<String> status = Rx('');
 
-  Rx<String> emailTxt = Rx('abc@gmail.com');
+  Rx<String> emailTxt = Rx('');
 
-  Rx<String> mobileNoTxt = Rx('9999999999');
+  Rx<String> mobileNoTxt = Rx('');
 
-  Rx<String> createdTxt = Rx('29 may 2022, 12:33 pm');
+  Rx<String> createdTxt = Rx('');
 }
